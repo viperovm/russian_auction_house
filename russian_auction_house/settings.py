@@ -42,9 +42,9 @@ INSTALLED_APPS = [
     #CORS
     # 'corsheaders',
     #rest-framework
-    'rest_framework',
+    # 'rest_framework',
     #'drf_yasg
-    'drf_yasg',
+    # 'drf_yasg',
 ]
 
 # REST_FRAMEWORK = {
