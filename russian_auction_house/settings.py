@@ -75,6 +75,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'russian_auction_house.urls'
 
 SECURE_CROSS_ORIGIN_OPENER_POLICY = None
+CSRF_TRUSTED_ORIGINS = ['127.0.0.1', 'localhost', 'art-bid.ru', 'www.art-bid.ru']
 
 # CORS_ALLOW_ALL_ORIGINS = True
 
