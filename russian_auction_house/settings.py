@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'debug_toolbar',
     #CORS
-    'corsheaders',
+    # 'corsheaders',
     #rest-framework
     'rest_framework',
     #'drf_yasg
@@ -61,7 +61,7 @@ INSTALLED_APPS = [
 # }
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
+    # 'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -76,7 +76,7 @@ ROOT_URLCONF = 'russian_auction_house.urls'
 
 SECURE_CROSS_ORIGIN_OPENER_POLICY = None
 
-CORS_ALLOW_ALL_ORIGINS = True
+# CORS_ALLOW_ALL_ORIGINS = True
 
 TEMPLATES = [
     {
