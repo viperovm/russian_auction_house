@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-z75p=*2a+1(!wah3^!1d_zcgiklcfiq5-@ra*=dek%^fg_2@cl
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'art-bid.ru', 'www.art-bid.ru']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'art-bid.ru', 'www.art-bid.ru', '79.174.92.182']
 
 
 # Application definition

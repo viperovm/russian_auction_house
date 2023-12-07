@@ -1,0 +1,167 @@
+ssh root@79.174.92.182
+
+HCy5zbNUqTWTx1MW
+
+adduser viperovm
+
+letlos33
+
+usermod -aG sudo viperovm
+
+ssh-copy-id viperovm@79.174.92.182
+
+ssh viperovm@79.174.92.182
+
+sudo apt update
+
+sudo apt install nano mc
+
+sudo nano /etc/ssh/sshd_config
+
+PasswordAuthentication no
+
+PubkeyAuthentication yes
+
+ChallengeResponseAuthentication no
+
+sudo systemctl reload sshd
+
+ssh viperovm@79.174.92.182
+
+sudo ufw app list
+
+sudo ufw allow OpenSSH
+
+sudo ufw enable
+
+sudo ufw status
+
+sudo apt install python3-pip python3-dev libpq-dev postgresql postgresql-contrib nginx curl
+
+
+	CREATE DATABASE russian_auction_house;
+
+	CREATE USER russian_auction_houseadmin WITH PASSWORD 'russian_auction_housesecret';
+
+	ALTER ROLE russian_auction_houseadmin SET client_encoding TO 'utf8';
+
+	ALTER ROLE russian_auction_houseadmin SET default_transaction_isolation TO 'read committed';
+
+	ALTER ROLE russian_auction_houseadmin SET timezone TO 'UTC';
+
+	GRANT ALL PRIVILEGES ON DATABASE russian_auction_house TO russian_auction_houseadmin;
+
+\q
+
+sudo -H pip3 install --upgrade pip
+
+sudo -H pip3 install virtualenv
+
+mkdir ~/russian_auction_house && cd ~/russian_auction_house && virtualenv venv && source venv/bin/activate
+
+pip install django gunicorn psycopg2-binary
+
+django-admin.py startproject russian_auction_house ~/russian_auction_house
+
+sudo ufw allow 8000
+
+python manage.py runserver 0.0.0.0:8000
+
+http://79.174.92.182:8000
+
+gunicorn --bind 0.0.0.0:8000 russian_auction_house.wsgi
+
+deactivate
+
+sudo nano /etc/systemd/system/russian_auction_house.socket
+
+[Unit]
+Description=gunicorn socket
+
+[Socket]
+ListenStream=/run/russian_auction_house.sock
+
+[Install]
+WantedBy=sockets.target
+
+
+sudo nano /etc/systemd/system/russian_auction_house.service
+
+[Unit]
+Description=gunicorn daemon
+Requires=russian_auction_house.socket
+After=network.target
+
+
+[Service]
+User=viperovm
+Group=www-data
+WorkingDirectory=/home/viperovm/russian_auction_house
+ExecStart=/home/viperovm/russian_auction_house/venv/bin/gunicorn \
+    --access-logfile - \
+    --workers 3 \
+    --bind unix:/run/russian_auction_house.sock \
+    russian_auction_house.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
+
+
+sudo systemctl start russian_auction_house.socket && sudo systemctl enable russian_auction_house.socket
+
+sudo systemctl status russian_auction_house.socket
+
+file /run/russian_auction_house.sock
+
+sudo journalctl -u russian_auction_house.socket
+
+sudo systemctl status russian_auction_house
+
+curl --unix-socket /run/russian_auction_house.sock localhost
+
+sudo systemctl status russian_auction_house
+
+sudo journalctl -u russian_auction_house
+
+sudo systemctl daemon-reload
+
+sudo systemctl restart russian_auction_house
+
+sudo nano /etc/nginx/sites-available/russian_auction_house
+
+server {
+    listen 80;
+    server_name 79.174.92.182 nordicway.ru www.nordicway.ru;
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location /static/ {
+        root /home/viperovm/russian_auction_house;
+    }
+    location /media/ {
+	autoindex on;
+        root /home/viperovm/russian_auction_house;
+    }
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/run/russian_auction_house.sock;
+    }
+}
+
+
+
+sudo ln -s /etc/nginx/sites-available/russian_auction_house /etc/nginx/sites-enabled/russian_auction_house
+
+sudo nginx -t
+
+sudo systemctl restart nginx
+
+sudo ufw delete allow 8000
+
+sudo ufw allow 'Nginx Full'
+
+
+sudo systemctl daemon-reload
+sudo systemctl restart russian_auction_house
+sudo systemctl restart nginx
+
+
