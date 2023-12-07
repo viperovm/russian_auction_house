@@ -40,9 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'debug_toolbar',
     #CORS
-    # 'corsheaders',
+    'corsheaders',
     #rest-framework
-    # 'rest_framework',
+    'rest_framework',
     #'drf_yasg
     # 'drf_yasg',
 ]
@@ -60,8 +60,15 @@ INSTALLED_APPS = [
 #     # 'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
 # }
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+
+    )
+}
+
 MIDDLEWARE = [
-    # 'corsheaders.middleware.CorsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -74,10 +81,10 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'russian_auction_house.urls'
 
-SECURE_CROSS_ORIGIN_OPENER_POLICY = None
-CSRF_TRUSTED_ORIGINS = ['127.0.0.1', 'localhost', 'art-bid.ru', 'www.art-bid.ru']
+# SECURE_CROSS_ORIGIN_OPENER_POLICY = None
+# CSRF_TRUSTED_ORIGINS = ['127.0.0.1', 'localhost', 'art-bid.ru', 'www.art-bid.ru']
 
-# CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = True
 
 TEMPLATES = [
     {
