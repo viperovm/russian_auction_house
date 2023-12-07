@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-z75p=*2a+1(!wah3^!1d_zcgiklcfiq5-@ra*=dek%^fg_2@cl
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'art-bid.ru', 'www.art-bid.ru', '79.174.92.182']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'art-bid.ru', 'www.art-bid.ru']
 
 
 # Application definition
@@ -73,8 +73,6 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'russian_auction_house.urls'
-
-SECURE_CROSS_ORIGIN_OPENER_POLICY = None
 
 CORS_ALLOW_ALL_ORIGINS = True
 
