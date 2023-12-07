@@ -128,7 +128,7 @@ server {
     server_name 79.174.92.182 art-bid.ru www.art-bid.ru;
 
     location = /favicon.png {
-        alias /home/viperovm/russian_auction_house/frontend/build/favicon.png
+        alias /home/viperovm/russian_auction_house/frontend/build/favicon.png;
         access_log off;
         log_not_found off;
     }
