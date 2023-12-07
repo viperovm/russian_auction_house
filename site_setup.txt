@@ -117,12 +117,6 @@ sudo journalctl -u russian_auction_house.socket
 
 sudo systemctl status russian_auction_house
 
-curl --unix-socket /run/russian_auction_house.sock localhost
-
-sudo systemctl status russian_auction_house
-
-sudo journalctl -u russian_auction_house
-
 sudo systemctl daemon-reload
 
 sudo systemctl restart russian_auction_house
@@ -131,10 +125,18 @@ sudo nano /etc/nginx/sites-available/russian_auction_house
 
 server {
     listen 80;
-    server_name 79.174.92.182 nordicway.ru www.nordicway.ru;
+    server_name 79.174.92.182 art-bid.ru www.art-bid.ru;
 
-    location = /favicon.ico { access_log off; log_not_found off; }
+    location = /favicon.png {
+        alias /home/viperovm/russian_auction_house/frontend/build/favicon.png
+        access_log off;
+        log_not_found off;
+    }
+
     location /static/ {
+        root /home/viperovm/russian_auction_house/frontend/build;
+    }
+    location /django-static/ {
         root /home/viperovm/russian_auction_house;
     }
     location /media/ {
@@ -160,8 +162,6 @@ sudo ufw delete allow 8000
 sudo ufw allow 'Nginx Full'
 
 
-sudo systemctl daemon-reload
-sudo systemctl restart russian_auction_house
-sudo systemctl restart nginx
+sudo systemctl daemon-reload && sudo systemctl restart russian_auction_house && sudo systemctl restart nginx
 
 

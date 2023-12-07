@@ -61,6 +61,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'russian_auction_house.urls'
 
+SECURE_CROSS_ORIGIN_OPENER_POLICY = None
+
 CORS_ALLOW_ALL_ORIGINS = True
 
 TEMPLATES = [
