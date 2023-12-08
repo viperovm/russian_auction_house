@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     #rest-framework
     'rest_framework',
     #'drf_yasg
-    # 'drf_yasg',
+    'drf_yasg',
 ]
 
 # REST_FRAMEWORK = {
