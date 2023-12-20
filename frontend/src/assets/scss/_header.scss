@@ -1,0 +1,59 @@
+@import "variables";
+
+.header {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  //position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.header_container {
+  display: flex;
+  padding: 10px 0;
+  margin: 0 20px;
+  border-bottom: 1px solid $text-black;
+  @media #{$mobile-layout} {
+    width: 100%;
+    height: 70px;
+  }
+  @media #{$tab-layout} {
+    width: 100%;
+    height: 70px;
+  }
+  @media #{$desktop-layout} {
+    width: 100%;
+    height: 90px;
+  }
+  @media #{$xl-layout} {
+    width: 1190px;
+    height: 90px;
+  }
+}
+
+.header_logo {
+  flex: 1;
+  margin: 0;
+  padding: 0;
+}
+
+.header_menu {
+  display: flex;
+  justify-content: center;
+  flex: 3;
+  margin: 0;
+  padding: 0;
+}
+
+.header_search {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 20px;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+}

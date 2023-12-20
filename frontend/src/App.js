@@ -1,18 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
-import React from "react";
+import MasterRoute from "./routes/MasterRoute"
+import "./assets/scss/index.scss"
+import { Provider } from "react-redux"
+import store from "./store/store"
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Скоро открытие!
-        </p>
-      </header>
-    </div>
-  );
+    <Provider store={store}>
+      <MasterRoute />
+    </Provider>
+  )
 }
 
-export default App;
+export default App

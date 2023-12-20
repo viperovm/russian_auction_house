@@ -1,0 +1,39 @@
+@import "variables";
+
+.logo {
+  @media #{$mobile-layout} {
+    width: 140px;
+    height: 50px;
+  }
+  @media #{$tab-layout} {
+    width: 140px;
+    height: 50px;
+  }
+  @media #{$desktop-layout} {
+    width: 200px;
+    height: 70px;
+  }
+  @media #{$xl-layout} {
+    width: 200px;
+    height: 70px;
+  }
+}
+
+.footer_logo {
+  @media #{$mobile-layout} {
+    width: 140px;
+    height: 50px;
+  }
+  @media #{$tab-layout} {
+    width: 140px;
+    height: 50px;
+  }
+  @media #{$desktop-layout} {
+    width: 170px;
+    height: 60px;
+  }
+  @media #{$xl-layout} {
+    width: 170px;
+    height: 60px;
+  }
+}

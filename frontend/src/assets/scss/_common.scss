@@ -1,0 +1,74 @@
+@import "variables";
+
+/*----------------------------------------*/
+
+/*  1. Template default CSS
+/*----------------------------------------*/
+
+/*-- Google Font --*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/*-- Common Style --*/
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: $tinos;
+  font-size: 20px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 28px;
+  width: 100%;
+
+  color: $text-black;
+  background-color: $white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $mont;
+
+
+  margin-top: 0;
+
+
+}
+
+h1 {
+  font-weight: 900;
+  font-size: 27px;
+  line-height: 130%;
+  margin-bottom: 25px;
+  color: $blue-primary;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 23px;
+  line-height: 130%;
+  margin-bottom: 10px;
+  color: $text-black;
+}
+
+p {
+  font-family: $tinos;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  margin-bottom: 25px;
+  color: $text-black;
+}

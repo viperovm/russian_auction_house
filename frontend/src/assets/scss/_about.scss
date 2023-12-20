@@ -1,0 +1,31 @@
+@import "variables";
+
+.about_gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  @media #{$mobile-layout} {
+    & > img {
+      width: 100%;
+    }
+  }
+  @media #{$tab-layout} {
+    & > img {
+      width: calc(50% - 15px);
+    }
+  }
+  @media #{$desktop-layout} {
+    & > img {
+      width: calc(25% - 22.5px);
+    }
+  }
+  @media #{$xl-layout} {
+    & > img {
+      width: calc(25% - 22.5px);
+    }
+  }
+}
+
+.about_gallery_item {
+  object-fit: cover;
+}

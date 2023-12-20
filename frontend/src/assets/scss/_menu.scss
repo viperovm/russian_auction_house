@@ -1,0 +1,56 @@
+@import "variables";
+
+.menu_container {
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  @media #{$mobile-layout} {
+    display: none;
+  }
+  @media #{$tab-layout} {
+    display: none;
+  }
+  @media #{$desktop-layout} {
+    display: flex;
+  }
+  @media #{$xl-layout} {
+    display: flex;
+  }
+}
+
+.menu_item {
+  margin: 0;
+  padding: 5px 0;
+  font-size: 20px;
+  font-weight: 400;
+  color: $text-black;
+}
+
+.active {
+  position: relative;
+}
+
+.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 3px solid $pink-primary;
+}
+
+.mobile_menu {
+  cursor: pointer;
+  @media #{$mobile-layout} {
+    display: block;
+  }
+  @media #{$tab-layout} {
+    display: block;
+  }
+  @media #{$desktop-layout} {
+    display: none;
+  }
+  @media #{$xl-layout} {
+    display: none;
+  }
+}

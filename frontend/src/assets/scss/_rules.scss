@@ -1,0 +1,34 @@
+@import "variables";
+
+.trading_rules {
+
+}
+
+.list_init {
+  display: none;
+}
+
+.trading_rules_list {
+  list-style-type: none;
+  counter-reset: item;
+  margin: 0 0 10px 0;
+  padding: 0;
+
+  li {
+    display: block;
+    margin-bottom: 10px;
+    //counter-increment: item;
+  }
+
+  //
+  li:before {
+    content: counters(item, ".") " ";
+    counter-increment: item;
+  }
+}
+
+.trading_rules_list_none:before {
+  opacity: 0;
+  margin-bottom: -30px;
+  display: block;
+}
