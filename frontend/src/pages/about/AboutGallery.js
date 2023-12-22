@@ -36,9 +36,6 @@ const AboutGallery = () => {
     }
   }, []);
 
-  console.log(mob)
-  console.log(width)
-
   useEffect(() => {
     if(width < 992) {
       setMob(true)

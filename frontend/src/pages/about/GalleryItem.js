@@ -6,10 +6,6 @@ const GalleryItem = ({img, mob}) => {
   const [width, setWidth] = useState(0);
   const [height, setHeight] = useState(null);
 
-  console.log(width)
-  console.log(height)
-  console.log(mob)
-
   useLayoutEffect(() => {
     if (targetRef.current) {
       setWidth(targetRef.current.offsetWidth);
@@ -18,10 +14,8 @@ const GalleryItem = ({img, mob}) => {
 
   useEffect(() => {
     if(mob) {
-      console.log(1)
       setHeight(width/1.2)
     } else {
-      console.log(1)
       setHeight(width*1.2)
     }
   }, [width, mob])
