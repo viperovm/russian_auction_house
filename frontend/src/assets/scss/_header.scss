@@ -32,6 +32,9 @@
     width: 1190px;
     height: 90px;
   }
+  & .active {
+    border-bottom: 1px solid $pink-primary;
+  }
 }
 
 .header_logo {

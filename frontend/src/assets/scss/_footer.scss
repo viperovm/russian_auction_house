@@ -90,6 +90,7 @@
   @media #{$mobile-layout} {
     width: 100%;
     margin-bottom: 25px;
+    flex-direction: column;
   }
   @media #{$tab-layout} {
     width: 60%;
@@ -137,6 +138,10 @@
   line-height: 140%;
   color: $white;
   white-space: nowrap;
+  &:hover {
+    border-bottom: 1px solid $pink-primary;
+    color: $pink-primary;
+  }
 }
 
 .docs {
@@ -214,42 +219,6 @@
   font-size: 18px;
   font-weight: 900;
   line-height: 140%;
-}
-
-.contact_item_button {
-  font-family: $mont;
-  font-size: 16px;
-  font-weight: 900;
-  line-height: 140%;
-  color: $pink-primary;
-  height: 45px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 15px;
-  border: 1px solid $pink-primary;
-  border-radius: 5px;
-  cursor: pointer;
-  white-space: nowrap;
-  @media #{$mobile-layout} {
-    align-self: end;
-  }
-  @media #{$tab-layout} {
-    width: 100%;
-    flex: 1;
-    align-items: center;
-    justify-content: center;
-  }
-  @media #{$desktop-layout} {
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-  }
-  @media #{$xl-layout} {
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-  }
 }
 
 .all_rights_r {

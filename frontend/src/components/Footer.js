@@ -97,7 +97,7 @@ const Footer = () => {
               +7 977 273-60-62
             </div>
           </div>
-          <div className="contact_item_button">
+          <div className="contact_button">
             Связаться с нами
           </div>
         </div>

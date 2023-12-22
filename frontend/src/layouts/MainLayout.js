@@ -14,6 +14,7 @@ const MainLayout = ({children}) => {
   return (
     <div className="main_layout">
       <Header/>
+
       <div className="content">
         <div className="content_container">
           {children}

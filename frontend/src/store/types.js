@@ -1,0 +1,1 @@
+export const MOBILE_MENU = "MOBILE_MENU"

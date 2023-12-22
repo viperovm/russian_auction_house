@@ -24,10 +24,24 @@
   font-size: 20px;
   font-weight: 400;
   color: $text-black;
-}
-
-.active {
   position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 3px solid $white;
+  }
+  &:hover::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 3px solid $pink-primary;
+  }
 }
 
 .active::after {

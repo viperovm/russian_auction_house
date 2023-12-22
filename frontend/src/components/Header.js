@@ -21,6 +21,8 @@ const Header = () => {
           <MobileMenu/>
         </div>
       </div>
+      <div className="mobile_menu">
+      </div>
     </div>
   );
 };
