@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import Logo from "./Logo";
 import Menu from "./menu/Menu";
 import MobileMenu from "./menu/MobileMenu";
@@ -7,6 +7,18 @@ import Search from "./search/Search";
 import { useSelector } from "react-redux"
 
 const Header = () => {
+
+  const { active_action } = useSelector(state => state.site)
+
+  const [height, setHeight] = useState(0)
+  const ref = useRef(null)
+
+  console.log(height)
+  // console.log(ref.current.clientHeight)
+
+  useEffect(() => {
+    setHeight(ref.current.clientHeight * -1)
+  }, [active_action])
 
   const menu_items = [
     // {
@@ -41,7 +53,7 @@ const Header = () => {
     },
   ]
 
-  const { active_action } = useSelector(state => state.site)
+
 
   return (
     <div className="header">
@@ -58,8 +70,14 @@ const Header = () => {
           <MobileMenu/>
         </div>
       </div>
-      <div className={`${active_action === 'mobile_menu' ? `mobile_menu_wrapper_active` : `mobile_menu_wrapper`}`}>
+      <div className="mobile_menu_section">
+        <div
+          ref={ref}
+          className={`mobile_menu_wrapper ${active_action === 'mobile_menu' ? `open` : ``}`}
+          // style={{top: active_action === 'mobile_menu' ? 0 : height }}
+        >
         <Menu type="mob" items={menu_items}/>
+      </div>
       </div>
     </div>
   );
