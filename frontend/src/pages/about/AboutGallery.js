@@ -1,8 +1,8 @@
 import React, {useRef, useLayoutEffect, useState, useEffect} from 'react'
-import img1 from '../../assets/img/aboutGallery/1.png'
-import img2 from '../../assets/img/aboutGallery/2.png'
-import img3 from '../../assets/img/aboutGallery/3.png'
-import img4 from '../../assets/img/aboutGallery/4.png'
+import img1 from '../../assets/img/aboutGallery/1.jpg'
+import img2 from '../../assets/img/aboutGallery/2.jpg'
+import img3 from '../../assets/img/aboutGallery/3.jpg'
+import img4 from '../../assets/img/aboutGallery/4.jpg'
 import GalleryItem from "./GalleryItem";
 
 const AboutGallery = () => {

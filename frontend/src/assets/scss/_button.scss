@@ -1,6 +1,5 @@
 .main_button {
   font-family: $mont;
-  font-size: 16px;
   font-weight: 900;
   line-height: 140%;
   color: $pink-primary;
@@ -20,22 +19,26 @@
   }
   @media #{$mobile-layout} {
     align-self: end;
+    font-size: 14px;
   }
   @media #{$tab-layout} {
     width: 100%;
     flex: 1;
     align-items: center;
     justify-content: center;
+    font-size: 15px;
   }
   @media #{$desktop-layout} {
     width: 100%;
     align-items: center;
     justify-content: center;
+    font-size: 16px;
   }
   @media #{$xl-layout} {
     width: 100%;
     align-items: center;
     justify-content: center;
+    font-size: 16px;
   }
 }
 

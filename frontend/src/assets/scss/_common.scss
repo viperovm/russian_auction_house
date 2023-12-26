@@ -127,3 +127,22 @@ p {
     margin-bottom: 10px;
   }
 }
+
+small {
+  font-family: $tinos;
+  font-weight: 400;
+  line-height: 140%;
+  color: $text-black;
+  @media #{$mobile-layout} {
+    font-size: 16px;
+  }
+  @media #{$tab-layout} {
+    font-size: 16px;
+  }
+  @media #{$desktop-layout} {
+    font-size: 18px;
+  }
+  @media #{$xl-layout} {
+    font-size: 18px;
+  }
+}
