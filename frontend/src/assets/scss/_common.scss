@@ -34,81 +34,96 @@ body {
   background-color: $white;
 }
 
+a {
+  text-decoration: none;
+  color: #1D1D1D;
+  transition: 0.5s;
+  cursor: pointer;
+
+  &:hover {
+    color: $pink-primary;
+  }
+}
+
 h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h3 {
   font-family: $mont;
-
-
   margin-top: 0;
-
-
+  font-weight: 900;
 }
 
 h1 {
-  font-weight: 900;
-  font-size: 27px;
-  line-height: 130%;
-  margin-bottom: 25px;
   color: $blue-primary;
+  line-height: 130%;
+  @media #{$mobile-layout} {
+    font-size: 21px;
+  }
+  @media #{$tab-layout} {
+    font-size: 23px;
+  }
+  @media #{$desktop-layout} {
+    font-size: 27px;
+  }
+  @media #{$xl-layout} {
+    font-size: 27px;
+  }
 }
 
 h2 {
+  font-family: $tinos;
   font-weight: 700;
-  font-size: 23px;
-  line-height: 130%;
-  margin-bottom: 10px;
+  line-height: 140%;
   color: $text-black;
+  @media #{$mobile-layout} {
+    font-size: 20px;
+  }
+  @media #{$tab-layout} {
+    font-size: 20px;
+  }
+  @media #{$desktop-layout} {
+    font-size: 23px;
+  }
+  @media #{$xl-layout} {
+    font-size: 23px;
+  }
+}
+
+h3 {
+  line-height: 140%;
+  color: $text-black;
+  @media #{$mobile-layout} {
+    font-size: 17px;
+  }
+  @media #{$tab-layout} {
+    font-size: 17px;
+  }
+  @media #{$desktop-layout} {
+    font-size: 20px;
+  }
+  @media #{$xl-layout} {
+    font-size: 20px;
+  }
 }
 
 p {
   font-family: $tinos;
-  font-size: 20px;
   font-weight: 400;
-  line-height: 28px;
-  margin-bottom: 25px;
-  color: $text-black;
-}
-
-.contact_button {
-  font-family: $mont;
-  font-size: 16px;
-  font-weight: 900;
   line-height: 140%;
-  color: $pink-primary;
-  height: 45px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 15px;
-  border: 1px solid $pink-primary;
-  border-radius: 5px;
-  cursor: pointer;
-  white-space: nowrap;
-  &:hover {
-    background-color: $pink-primary;
-    color: $blue-primary;
-  }
+  color: $text-black;
   @media #{$mobile-layout} {
-    align-self: end;
+    font-size: 17px;
+    margin-bottom: 7px;
   }
   @media #{$tab-layout} {
-    width: 100%;
-    flex: 1;
-    align-items: center;
-    justify-content: center;
+    font-size: 17px;
+    margin-bottom: 7px;
   }
   @media #{$desktop-layout} {
-    width: 100%;
-    align-items: center;
-    justify-content: center;
+    font-size: 20px;
+    margin-bottom: 10px;
   }
   @media #{$xl-layout} {
-    width: 100%;
-    align-items: center;
-    justify-content: center;
+    font-size: 20px;
+    margin-bottom: 10px;
   }
 }

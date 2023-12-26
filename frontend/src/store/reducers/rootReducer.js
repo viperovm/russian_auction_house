@@ -1,8 +1,8 @@
 import { combineReducers } from "redux"
-import initReducer from "./initReducer"
+import siteReducer from "./siteReducer"
 
 const rootReducer = combineReducers({
-  init: initReducer,
+  site: siteReducer,
 })
 
 export default rootReducer

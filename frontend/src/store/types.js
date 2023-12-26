@@ -1,1 +1,1 @@
-export const MOBILE_MENU = "MOBILE_MENU"
+export const ACTIVE_ACTION = "ACTIVE_ACTION"

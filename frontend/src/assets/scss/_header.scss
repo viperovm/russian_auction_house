@@ -5,16 +5,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  //position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
+  flex-direction: column;
+  padding: 0 20px;
 }
 
 .header_container {
   display: flex;
   padding: 10px 0;
-  margin: 0 20px;
+  //margin: 0 20px;
   border-bottom: 1px solid $text-black;
   @media #{$mobile-layout} {
     width: 100%;
@@ -32,7 +31,7 @@
     width: 1190px;
     height: 90px;
   }
-  & .active {
+  &.active {
     border-bottom: 1px solid $pink-primary;
   }
 }
@@ -59,4 +58,15 @@
   flex: 1;
   margin: 0;
   padding: 0;
+}
+
+.mobile_menu_wrapper {
+  display: none;
+  transition: 0.5s;
+  &_active {
+    width: 100%;
+    display: flex;
+    box-shadow: 0px 4px 20px 0px #1631900D;
+    background-color: #F6F8FD;
+  }
 }

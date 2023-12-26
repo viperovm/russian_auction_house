@@ -3,6 +3,11 @@ import Logo from "./Logo";
 import {Link} from "react-router-dom";
 import tg from "../assets/img/tg.svg"
 import whatsapp from "../assets/img/whatsapp.svg"
+import TextButton from "./Buttons/TextButton";
+import IconButton from "./Buttons/IconButton";
+import WhatsApp from "./icons/WhatsApp";
+import Tg from "./icons/Tg";
+import Menu from "./menu/Menu";
 
 const Footer = () => {
 
@@ -67,43 +72,38 @@ const Footer = () => {
             <div className="navi_header">
               Навигация
             </div>
-            <div className="navi_section">
-              {menu_items?.map((d, k) => (
-                <Link to={d.url} key={k} className="navi_section_item">{d.name}</Link>
-              ))}
-            </div>
+            <Menu type="footer" items={menu_items}/>
           </div>
           <div className="docs">
             <div className="navi_header">
               Документы
             </div>
-            <div className="navi_section">
-              {doc_items?.map((d, k) => (
-                <Link to={d.url} key={k} className="navi_section_item">{d.name}</Link>
-              ))}
-            </div>
+            <Menu type="footer" items={doc_items}/>
           </div>
         </div>
         <div className="contact">
           <div className="contact_items">
             <div className="contact_item">
-              <img src={tg} alt="tg"/>
-              <img src={whatsapp} alt="whatsapp"/>
+              <IconButton>
+                <Tg/>
+              </IconButton>
+              <IconButton>
+                <WhatsApp/>
+              </IconButton>
             </div>
-            <div className="contact_item contact_item_text">
+            <a href="mailto:info@art-bid.ru" className="contact_item contact_item_text">
               info@art-bid.ru
-            </div>
-            <div className="contact_item contact_item_text">
+            </a>
+            <a href="tel:+79772736062" className="contact_item contact_item_text">
               +7 977 273-60-62
-            </div>
+            </a>
           </div>
-          <div className="contact_button">
-            Связаться с нами
-          </div>
+          <TextButton text="Связаться с нами" action={() => {
+          }}/>
         </div>
       </div>
       <div className="all_rights_r">
-        2023 © Все права защищены
+        {`${new Date().getFullYear()} © Все права защищены`}
       </div>
     </div>
   );

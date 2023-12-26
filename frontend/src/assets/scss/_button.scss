@@ -1,0 +1,62 @@
+.main_button {
+  font-family: $mont;
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 140%;
+  color: $pink-primary;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 15px;
+  border: 1px solid $pink-primary;
+  border-radius: 5px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: 0.5s;
+  &:hover {
+    background-color: $pink-primary;
+    color: $blue-primary;
+  }
+  @media #{$mobile-layout} {
+    align-self: end;
+  }
+  @media #{$tab-layout} {
+    width: 100%;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+  }
+  @media #{$desktop-layout} {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  @media #{$xl-layout} {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.icon_button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $white;
+  cursor: pointer;
+  transition: 0.5s;
+  & .secondary_path {
+      fill: $white;
+    transition: 0.5s;
+    }
+  &:hover {
+    background-color: $pink-primary;
+    & .secondary_path {
+      fill: $pink-primary;
+    }
+  }
+}

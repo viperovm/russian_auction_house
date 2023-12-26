@@ -1,9 +1,9 @@
 import * as t from "../types"
 
-export const mobileMenu = active => dispatch => {
+export const activeAction = name => dispatch => {
 
   dispatch({
-    type: t.MOBILE_MENU,
-    payload: active,
+    type: t.ACTIVE_ACTION,
+    payload: name,
   })
 }

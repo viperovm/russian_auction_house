@@ -1,18 +1,18 @@
 import * as t from "../types"
 
 const initialState = {
-  mobileMenu: false,
+  active_action: '',
 }
 
 const siteReducer = (state = initialState, action) => {
   const { type, payload } = action
 
   switch (type) {
-    case t.MOBILE_MENU:
+    case t.ACTIVE_ACTION:
 
       return {
         ...state,
-        mobileMenu: payload,
+        active_action: payload,
       }
 
     default:
