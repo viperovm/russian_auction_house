@@ -19,8 +19,14 @@ const Subscription = () => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       console.log(1)
-      const timestamp = JSON.parse(localStorage.getItem('timestamp'))
-      const subscribed = JSON.parse(localStorage.getItem('subscribed'))
+      let timestamp = null
+      let subscribed = null
+      if(localStorage.getItem('timestamp')){
+        timestamp = JSON.parse(localStorage.getItem('timestamp'))
+      }
+      if(localStorage.getItem('subscribed')){
+        subscribed = JSON.parse(localStorage.getItem('subscribed'))
+      }
       console.log(timestamp)
       console.log(subscribed)
       if ((!subscribed && !timestamp) || (!subscribed && (timestamp && Date.now() - timestamp > 30000))) {
