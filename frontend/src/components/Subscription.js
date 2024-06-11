@@ -26,6 +26,8 @@ const Subscription = () => {
       if ((!subscribed && !timestamp) || (!subscribed && (timestamp && Date.now() - timestamp > 30000))) {
         dispatch(modalAction('subscription'))
         localStorage.setItem('timestamp', JSON.stringify(Date.now()));
+      } else {
+        localStorage.setItem('subscribed', '')
       }
       // else {
       //   console.log(2)
@@ -56,7 +58,7 @@ const Subscription = () => {
       const res = await axios.post(`https://art-bid.ru/api/new_user/`, body, config);
       console.log('subscribed')
       console.log(res)
-      localStorage.setItem('subscribed', JSON.stringify(Date.now()));
+      // localStorage.setItem('subscribed', JSON.stringify(Date.now()));
       dispatch(modalAction(''))
     } catch (e) {
       console.error(e)
