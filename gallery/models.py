@@ -1,7 +1,6 @@
 from django.db import models
 from utils.image_crop import create_crop_wout_tmb, get_tmb_path
 import os
-from django.utils.translation import gettext_lazy as _
 from django.template.defaultfilters import slugify
 from unidecode import unidecode
 from django.utils.text import slugify

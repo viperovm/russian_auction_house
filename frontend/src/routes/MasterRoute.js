@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom"
 import AboutPage from "../pages/about/AboutPage"
+import ShopPage from "../pages/shop/ShopPage"
 import TradingRules from "../pages/docs/TradingRules";
 import PersonalAgreement from "../pages/docs/PersonalAgreement";
 
@@ -14,6 +15,10 @@ const MasterRoute = () => {
         />
         <Route
           path={`/about`}
+          element={<AboutPage />}
+        />
+        <Route
+          path={`/shop`}
           element={<AboutPage />}
         />
         <Route

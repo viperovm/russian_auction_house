@@ -5,11 +5,10 @@ import {useDispatch} from "react-redux";
 import {modalAction} from "../store/actions/siteActions";
 import axios from "axios";
 
-const Subscription = (url, config) => {
+const Subscription = () => {
 
   const dispatch = useDispatch()
 
-  const [active, setActive] = useState(false)
   const [data, setData] = useState('')
 
 
