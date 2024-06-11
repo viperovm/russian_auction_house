@@ -7,3 +7,12 @@ export const activeAction = name => dispatch => {
     payload: name,
   })
 }
+
+export const modalAction = name => dispatch => {
+
+  dispatch({
+    type: t.SET_MODAL,
+    payload: name,
+  })
+}
+

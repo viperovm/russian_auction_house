@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'rest_framework',
     #'drf_yasg
     'drf_yasg',
+    # My apps
+    'contacts.apps.ContactsConfig',
 ]
 
 # REST_FRAMEWORK = {
