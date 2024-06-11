@@ -13,7 +13,7 @@ const MainLayout = ({children}) => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    if(!pages){
+    if(pages.length === 0){
       dispatch(pagesAction())
     }
   },[pages])
