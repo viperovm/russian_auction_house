@@ -9,7 +9,7 @@ from rest_framework import status
 @api_view(['POST'])
 def obtain_email(request):
 
-    email = request.data.email
+    email = request.data.get('email')
     payload = {
         'format': 'json',
         'api_key': '67jq9emuna394a5oxghmj9io1j9rkgzrurfoifna',
