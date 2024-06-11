@@ -27,21 +27,17 @@ export const pagesAction = () => async dispatch => {
   };
 
   try {
-    const res = await axios.patch(`https://art-bid.ru/api/pages/`, config);
+    const res = await axios.get(`https://art-bid.ru/api/pages/`, config);
 
     dispatch({
-      type: SEND_ORDER_STATUS_SUCCESS
+      type: t.GET_PAGES_SUCCESS,
+      payload: res.data,
     })
   } catch (err) {
 
     dispatch({
-      type: SEND_ORDER_STATUS_FAIL
+      type: t.GET_PAGES_FAIL
     })
   }
-
-  dispatch({
-    type: t.SET_MODAL,
-    payload: name,
-  })
 }
 

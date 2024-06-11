@@ -3,6 +3,7 @@ import * as t from "../types"
 const initialState = {
   active_action: '',
   modal: '',
+  pages: [],
 }
 
 const siteReducer = (state = initialState, action) => {
@@ -21,6 +22,20 @@ const siteReducer = (state = initialState, action) => {
       return {
         ...state,
         modal: payload,
+      }
+
+    case t.GET_PAGES_SUCCESS:
+
+      return {
+        ...state,
+        pages: payload,
+      }
+
+    case t.GET_PAGES_FAIL:
+
+      return {
+        ...state,
+        pages: [],
       }
 
     default:
