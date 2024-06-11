@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "../../logo.svg";
 import MainLayout from "../../layouts/MainLayout";
 import AboutGallery from "./AboutGallery";
 
