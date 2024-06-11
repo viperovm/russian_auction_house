@@ -1,0 +1,24 @@
+@import "variables";
+
+.modal-overlay {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(29, 29, 29, 0.25);
+}
+
+.modal-body {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}

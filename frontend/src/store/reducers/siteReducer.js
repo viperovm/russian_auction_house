@@ -2,10 +2,11 @@ import * as t from "../types"
 
 const initialState = {
   active_action: '',
+  modal: '',
 }
 
 const siteReducer = (state = initialState, action) => {
-  const { type, payload } = action
+  const {type, payload} = action
 
   switch (type) {
     case t.ACTIVE_ACTION:
@@ -13,6 +14,13 @@ const siteReducer = (state = initialState, action) => {
       return {
         ...state,
         active_action: payload,
+      }
+
+    case t.SET_MODAL:
+
+      return {
+        ...state,
+        modal: payload,
       }
 
     default:
