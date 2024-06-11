@@ -5,7 +5,7 @@ import {useDispatch} from "react-redux";
 import {modalAction} from "../store/actions/siteActions";
 import axios from "axios";
 
-const Subscription = () => {
+const Subscription = (url, config) => {
 
   const dispatch = useDispatch()
 
@@ -55,13 +55,16 @@ const Subscription = () => {
     const config = {
       headers: {
         'Access-Control-Allow-Origin': '*'
+      },
+      params: {
+        'email': data
       }
     };
-    const body = JSON.stringify({
-    email: data,
-  });
+
+
+
     try {
-      const res = await axios.post(`https://art-bid.ru/api/new_user/`, body, config);
+      const res = await axios.get(`https://art-bid.ru/api/new_user/`, config);
       console.log('subscribed')
       console.log(res)
       // localStorage.setItem('subscribed', JSON.stringify(Date.now()));
