@@ -21,9 +21,9 @@ def obtain_email(request):
     r = requests.get('https://api.unisender.com/ru/api/subscribe', params=payload)
 
     if r.status_code == requests.codes.ok:
-        return Response(r, status=status.HTTP_201_CREATED)
+        return Response(email, status=status.HTTP_201_CREATED)
     else:
-        return Response(r, status=status.HTTP_400_BAD_REQUEST)
+        return Response(r.json(), status=status.HTTP_400_BAD_REQUEST)
 
 
 
