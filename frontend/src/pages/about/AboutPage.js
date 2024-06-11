@@ -7,7 +7,9 @@ const AboutPage = () => {
 
   const { pages } = useSelector(state => state.site)
 
-  const [page, setPage] = useState()
+  const [page, setPage] = useState(null)
+
+  console.log(page)
 
   useEffect(() => {
     pages.map(item => {
