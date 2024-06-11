@@ -3,8 +3,20 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import {useLocation} from "react-router-dom";
 import Subscription from "../components/Subscription";
+import {useDispatch, useSelector} from "react-redux";
+import {pagesAction} from "../store/actions/siteActions";
 
 const MainLayout = ({children}) => {
+
+  const { pages } = useSelector(state => state.site)
+
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    if(!pages){
+      dispatch(pagesAction())
+    }
+  },[pages])
 
   const {pathname} = useLocation();
 
