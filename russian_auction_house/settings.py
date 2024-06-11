@@ -205,18 +205,18 @@ CKEDITOR_5_CONFIGS = {
                     'bulletedList', 'numberedList', 'todoList', '|', 'blockQuote', 'imageUpload', '|',
                     'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor', 'mediaEmbed', 'removeFormat',
                     'insertTable', ],
-        'image': {
-            'toolbar': ['imageTextAlternative', '|', 'imageStyle:alignLeft',
-                        'imageStyle:alignRight', 'imageStyle:alignCenter', 'imageStyle:side', '|'],
-            'styles': [
-                'full',
-                'side',
-                'alignLeft',
-                'alignRight',
-                'alignCenter',
-            ]
-
-        },
+        # 'image': {
+        #     'toolbar': ['imageTextAlternative', '|', 'imageStyle:alignLeft',
+        #                 'imageStyle:alignRight', 'imageStyle:alignCenter', 'imageStyle:side', '|'],
+        #     'styles': [
+        #         'full',
+        #         'side',
+        #         'alignLeft',
+        #         'alignRight',
+        #         'alignCenter',
+        #     ]
+        #
+        # },
         'table': {
             'contentToolbar': ['tableColumn', 'tableRow', 'mergeTableCells',
                                'tableProperties', 'tableCellProperties'],
