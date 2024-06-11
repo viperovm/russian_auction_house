@@ -12,13 +12,9 @@ const Subscription = (url, config) => {
   const [active, setActive] = useState(false)
   const [data, setData] = useState('')
 
-  console.log(localStorage.getItem('timestamp'))
-  console.log(active)
-  console.log(data)
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      console.log(1)
       let timestamp = null
       let subscribed = null
       if(localStorage.getItem('timestamp')){
@@ -27,25 +23,10 @@ const Subscription = (url, config) => {
       if(localStorage.getItem('subscribed')){
         subscribed = JSON.parse(localStorage.getItem('subscribed'))
       }
-      console.log(timestamp)
-      console.log(subscribed)
-      if ((!subscribed && !timestamp) || (!subscribed && (timestamp && Date.now() - timestamp > 30000))) {
+      if ((!subscribed && !timestamp) || (!subscribed && (timestamp && Date.now() - timestamp > 432000000))) {
         dispatch(modalAction('subscription'))
         localStorage.setItem('timestamp', JSON.stringify(Date.now()));
-      } else {
-        localStorage.setItem('subscribed', '')
       }
-      // else {
-      //   console.log(2)
-      //   dispatch(modalAction('subscription'))
-      //   setActive(true)
-      //   localStorage.setItem('timestamp', JSON.stringify(Date.now()));
-      // }
-      // else if (!timestamp || (timestamp && Date.now() - timestamp > 432000000)) {
-      //   console.log(2)
-      //   setActive(true)
-      //   localStorage.setItem('timestamp', JSON.stringify(Date.now()));
-      // }
     }, 2000);
     return () => clearTimeout(timeout);
   }, [])
@@ -65,9 +46,7 @@ const Subscription = (url, config) => {
 
     try {
       const res = await axios.get(`https://art-bid.ru/api/new_user/`, config);
-      console.log('subscribed')
-      console.log(res)
-      // localStorage.setItem('subscribed', JSON.stringify(Date.now()));
+      localStorage.setItem('subscribed', JSON.stringify(Date.now()));
       dispatch(modalAction(''))
     } catch (e) {
       console.error(e)
