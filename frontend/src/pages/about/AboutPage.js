@@ -19,8 +19,19 @@ const AboutPage = () => {
     })
   }, [pages])
 
+  const breadcrumbs = [
+    {
+      name: 'Главная',
+      url: '/'
+    },
+    {
+      name: 'О нас',
+      url: '/about'
+    },
+  ]
+
   return (
-    <MainLayout>
+    <MainLayout breadcrumbs={breadcrumbs}>
 
       {page && <div
         dangerouslySetInnerHTML={{__html: page?.description}}

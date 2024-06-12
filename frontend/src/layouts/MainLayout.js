@@ -5,8 +5,9 @@ import {useLocation} from "react-router-dom";
 import Subscription from "../components/Subscription";
 import {useDispatch, useSelector} from "react-redux";
 import {pagesAction} from "../store/actions/siteActions";
+import Breadcrumbs from "../components/breadcrumbs/Breadcrumbs";
 
-const MainLayout = ({children}) => {
+const MainLayout = ({children, breadcrumbs}) => {
 
   const { pages } = useSelector(state => state.site)
 
@@ -29,9 +30,11 @@ const MainLayout = ({children}) => {
       <Subscription/>
       <div className="main_layout">
         <Header/>
-
-        <div className="content">
-          <div className="content_container">
+        <div className="content-wrapper">
+          <div className="breadcrumbs container">
+            <Breadcrumbs items={breadcrumbs}/>
+          </div>
+          <div className="content container">
             {children}
           </div>
         </div>

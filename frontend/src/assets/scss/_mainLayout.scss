@@ -9,29 +9,40 @@
   width: 100%;
 }
 
-.content {
+.content-wrapper {
   flex: 3;
   width: 100%;
   display: flex;
   justify-content: center;
 }
 
-.content_container {
+.container {
   margin: 0 20px;
   @media #{$mobile-layout} {
-    padding: 30px 0 50px;
     width: 100%;
   }
   @media #{$tab-layout} {
-    padding: 30px 0 50px;
     width: 100%;
   }
   @media #{$desktop-layout} {
-    padding: 50px 0 80px;
     width: 100%;
   }
   @media #{$xl-layout} {
-    padding: 50px 0 80px;
     width: 1190px;
+  }
+}
+
+.content {
+  @media #{$mobile-layout} {
+    padding: 30px 0 50px;
+  }
+  @media #{$tab-layout} {
+    padding: 30px 0 50px;
+  }
+  @media #{$desktop-layout} {
+    padding: 50px 0 80px;
+  }
+  @media #{$xl-layout} {
+    padding: 50px 0 80px;
   }
 }
