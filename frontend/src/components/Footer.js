@@ -78,7 +78,7 @@ const Footer = () => {
             <div className="navi_header">
               Документы
             </div>
-            <Menu type="footer" items={doc_items}/>
+            <Menu type="footer" items={doc_items} doc={true}/>
           </div>
         </div>
         <div className="contact">

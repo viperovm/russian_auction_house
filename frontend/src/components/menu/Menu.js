@@ -3,15 +3,27 @@ import MenuItem from "./MenuItem";
 import {useSelector} from "react-redux";
 
 
-const Menu = ({type, items}) => {
+const Menu = ({type, doc, items}) => {
 
   const { pages } = useSelector(state => state.site)
 
   return (
     <div className={`${type  === 'mob' ? `menu_container_mobile` : type === 'footer' ? `menu_container_footer` : `menu_container`}`}>
-      {pages?.map((d, k) => (
-        <MenuItem key={k} data={d}/>
-      ))}
+      {
+        doc
+          ?
+          pages.filter(item => item.doc).map((d, k) => <MenuItem key={k} data={d}/>)
+          :
+          pages.filter(item => !item.doc).map((d, k) => <MenuItem key={k} data={d}/>)
+      }
+
+      {/*{pages?.map((d, k) => {*/}
+      {/*  if(doc && d.doc) {*/}
+      {/*    return <MenuItem key={k} data={d}/>*/}
+      {/*  } else if(!doc && !d.doc) {*/}
+      {/*    return <MenuItem key={k} data={d}/>*/}
+      {/*  }*/}
+      {/*})}*/}
     </div>
   );
 };
