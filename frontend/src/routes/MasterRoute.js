@@ -14,7 +14,7 @@ const MasterRoute = () => {
           element={<AboutPage />}
         />
         <Route
-          path={`/about`}
+          path={`/about/:doc?`}
           element={<AboutPage />}
         />
         <Route
@@ -24,10 +24,6 @@ const MasterRoute = () => {
         <Route
           path={`/trading-rules`}
           element={<TradingRules />}
-        />
-        <Route
-          path={`/about/personal-agreement`}
-          element={<PersonalAgreement />}
         />
 
       </Routes>
