@@ -12,9 +12,9 @@ const Menu = ({type, doc=false, items}) => {
       {
         doc
           ?
-          pages.filter(item => item.doc).map((d, k) => <MenuItem key={k} data={d}/>)
+          pages.filter(item => item.is_doc).map((d, k) => <MenuItem key={k} data={d}/>)
           :
-          pages.filter(item => !item.doc).map((d, k) => <MenuItem key={k} data={d}/>)
+          pages.filter(item => !item.is_doc).map((d, k) => <MenuItem key={k} data={d}/>)
       }
 
       {/*{pages?.map((d, k) => {*/}
