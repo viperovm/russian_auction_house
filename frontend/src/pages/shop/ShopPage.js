@@ -11,9 +11,11 @@ const ShopPage = () => {
   const [page, setPage] = useState(null)
 
   let { lot } = useParams();
+  let params = useParams();
 
   console.log(page)
   console.log(lot)
+  console.log(params)
 
 
   useEffect(() => {
