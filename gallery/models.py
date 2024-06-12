@@ -21,7 +21,7 @@ class Painting(models.Model):
     discount = models.PositiveIntegerField(verbose_name='Размер скидки', null=True, blank=True)
     new = models.BooleanField(verbose_name='Новинка', )
     description = models.TextField(verbose_name='Описание картины', null=True, blank=True)
-    slug = models.SlugField(null=True, blank=True)
+    url = models.SlugField(verbose_name='Url', unique=True)
     my_order = models.PositiveIntegerField(verbose_name='Сорт.', default=0, blank=False, null=False)
 
     def __str__(self):
@@ -31,6 +31,11 @@ class Painting(models.Model):
         verbose_name = 'Картина'
         verbose_name_plural = 'Картины'
         ordering = ['my_order']
+
+    def save(self, *args, **kwargs):
+        if not self.url:
+            self.url = slugify(self.name)
+        super().save(*args, **kwargs)
 
 
 class PaintingImages(models.Model):
