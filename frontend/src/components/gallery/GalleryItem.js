@@ -24,8 +24,8 @@ const GalleryItem = ({img, mob, shop}) => {
     <div className="about_gallery_item_wrapper">
       <img className="about_gallery_item" ref={targetRef} src={img?.painting_gallery[0]?.image} alt="" height={height}/>
       {shop && <div className="about_gallery_item_description">
-        <div className="about_gallery_item_name">{img?.name}</div>
-        <div className="about_gallery_item_price">{img?.price} ₽</div>
+        {img?.name && <div className="about_gallery_item_name">{img?.name}</div>}
+        {img?.price && <div className="about_gallery_item_price">{img?.price} ₽</div>}
       </div>}
     </div>
 
