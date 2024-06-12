@@ -76,9 +76,9 @@ const Gallery = ({shop=false}) => {
     <div ref={targetRef} className="about_gallery">
       {paintings?.map((d, k) => {
         if (!shop && k<=3) {
-          return <GalleryItem key={k} img={d.img} mob={mob} shop={shop}/>
-        } else {
-          return <GalleryItem key={k} img={d.img} mob={mob} shop={shop}/>
+          return <GalleryItem key={k} img={d.painting_gallery[0].image} mob={mob} shop={shop}/>
+        } else if(shop) {
+          return <GalleryItem key={k} img={d.painting_gallery[0].image} mob={mob} shop={shop}/>
         }
       })}
     </div>
