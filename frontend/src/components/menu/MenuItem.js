@@ -8,6 +8,8 @@ const MenuItem = ({data}) => {
   const dispatch = useDispatch()
   const { active_action } = useSelector(state => state.site)
 
+  console.log(window.location.pathname)
+
   const clickHandler = () => {
     if(active_action === 'mobile_menu') {
       dispatch(activeAction(''))
