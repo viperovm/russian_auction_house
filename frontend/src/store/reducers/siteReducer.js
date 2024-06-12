@@ -5,6 +5,7 @@ const initialState = {
   modal: '',
   pages: [],
   paintings: [],
+  painting: null,
 }
 
 const siteReducer = (state = initialState, action) => {
@@ -51,6 +52,20 @@ const siteReducer = (state = initialState, action) => {
       return {
         ...state,
         paintings: [],
+      }
+
+    case t.GET_PAINTING_SUCCESS:
+
+      return {
+        ...state,
+        painting: payload,
+      }
+
+    case t.GET_PAINTING_FAIL:
+
+      return {
+        ...state,
+        painting: null,
       }
 
     default:

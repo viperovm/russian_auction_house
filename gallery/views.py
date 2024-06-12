@@ -8,3 +8,4 @@ class PaintingViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Painting.objects.all()
     serializer_class = PaintingSerializer
     permission_classes = [AllowAny]
+    lookup_field = 'slug'

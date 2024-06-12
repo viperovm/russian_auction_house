@@ -3,10 +3,11 @@ import MainLayout from "../../layouts/MainLayout";
 import {useSelector} from "react-redux";
 import {useParams} from "react-router-dom";
 import Gallery from "../../components/gallery/Gallery";
+import {singlePaintingAction} from "../../store/actions/siteActions";
 
 const ShopPage = () => {
 
-  const { pages } = useSelector(state => state.site)
+  const { pages, painting } = useSelector(state => state.site)
 
   const [page, setPage] = useState(null)
 
@@ -19,13 +20,15 @@ const ShopPage = () => {
 
 
   useEffect(() => {
-    pages.map(p => {
-      if(lot && p.slug === `shop/${lot}`){
-        setPage(p)
-      } else if (!lot && p.slug === 'shop') {
+    if(lot) {
+      dispatch(singlePaintingAction(lot))
+    } else {
+      pages.map(p => {
+      if(p.slug === 'shop'){
         setPage(p)
       }
     })
+    }
   }, [lot, pages])
 
   const breadcrumbs = [
@@ -38,14 +41,14 @@ const ShopPage = () => {
       url: lot? '/shop' : ''
     },
     {
-      name: lot? page?.name : '',
+      name: lot? painting?.name : '',
     },
   ]
 
   return (
     <MainLayout breadcrumbs={breadcrumbs}>
 
-      {page && <div
+      {!lot && page && <div
         dangerouslySetInnerHTML={{__html: page?.description}}
       />}
       {!lot && <Gallery shop={true}/>}

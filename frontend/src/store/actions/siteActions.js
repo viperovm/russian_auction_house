@@ -65,3 +65,27 @@ export const paintingsAction = () => async dispatch => {
   }
 }
 
+export const singlePaintingAction = ({slug}) => async dispatch => {
+
+  const config = {
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+    }
+  };
+
+  try {
+    const res = await axios.get(`https://art-bid.ru/api/painting/${slug}`, config);
+
+    dispatch({
+      type: t.GET_PAINTING_SUCCESS,
+      payload: res.data,
+    })
+  } catch (err) {
+
+    dispatch({
+      type: t.GET_PAINTING_FAIL
+    })
+  }
+}
+
