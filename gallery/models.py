@@ -35,11 +35,6 @@ class Painting(models.Model):
         verbose_name_plural = 'Картины'
         ordering = ['my_order']
 
-    def save(self, *args, **kwargs):
-        if not self.slug:
-            self.slug = slugify(self.name)
-        super().save(*args, **kwargs)
-
 
 class PaintingImages(models.Model):
     image = models.ImageField(verbose_name='Фото', max_length=255, upload_to=image_directory_path)
