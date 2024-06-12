@@ -10,13 +10,15 @@
 }
 
 .breadcrumbs_item_link {
+  color: #9F9F9F;
   display: block;
-  &::after {
-    content: '/';
-    margin: 0 10px;
-  }
   &--disabled {
     pointer-events: none;
     font-weight: bold;
   }
+}
+
+.breadcrumbs_separator {
+  color: #9F9F9F;
+  margin: 0 10px;
 }
