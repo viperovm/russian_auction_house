@@ -18,7 +18,7 @@ const MenuItem = ({data}) => {
     <Link
       onClick={clickHandler}
       className={`menu_item${(data.url === window.location.pathname) ? ' active' : ''} `}
-      to={data.url}
+      to={`/${data.url}`}
     >
       {data.name}
     </Link>
