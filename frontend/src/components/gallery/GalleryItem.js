@@ -24,7 +24,7 @@ const GalleryItem = ({img, mob, shop}) => {
   }, [width, mob])
 
   const clickHandler = () => {
-    return navigate(`/shop/${img.id}`);
+    return navigate(`/shop/${img.slug}`);
   }
 
   return (
