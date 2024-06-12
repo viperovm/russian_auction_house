@@ -17,7 +17,7 @@
   }
   @media #{$desktop-layout} {
     & > .about_gallery_item_wrapper {
-      width: calc(25% - 22.5px);
+      width: calc(50% - 15px);
     }
   }
   @media #{$xl-layout} {
