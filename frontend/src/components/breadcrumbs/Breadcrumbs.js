@@ -9,9 +9,7 @@ const Breadcrumbs = ({items}) => {
           {items.map((item, index) => (
             <Link
               key={index}
-              className={`breadcrumbs_item_link ${
-                !item.url ? "breadcrumbs_item_link--disabled" : ""
-              }`}
+              className={item.url ? "breadcrumbs_item_link" : "breadcrumbs_item_link--disabled"}
               to={item.url}
             >
               {item.name}

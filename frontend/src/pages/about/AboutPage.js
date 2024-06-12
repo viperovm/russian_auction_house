@@ -26,7 +26,6 @@ const AboutPage = () => {
     },
     {
       name: 'О нас',
-      url: '/about'
     },
   ]
 
