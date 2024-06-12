@@ -36,7 +36,7 @@ const AboutPage = () => {
       url: doc? '/' : ''
     },
     {
-      name: doc? doc.name : '',
+      name: doc? page?.name : '',
     },
   ]
 
