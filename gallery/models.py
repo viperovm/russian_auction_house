@@ -15,14 +15,14 @@ def image_directory_path(instance, filename):
 
 
 class Painting(models.Model):
-    name = models.CharField(max_length=70, verbose_name='Название картины', null=True, blank=True)
-    price = models.PositiveIntegerField(verbose_name='Цена', null=True, blank=True)
+    name = models.CharField(max_length=70, verbose_name='Название картины', blank=False, null=False)
+    price = models.PositiveIntegerField(verbose_name='Цена', blank=False, null=False)
     new_price = models.PositiveIntegerField(verbose_name='Новая цена', null=True, blank=True)
     discount = models.PositiveIntegerField(verbose_name='Размер скидки', null=True, blank=True)
     new = models.BooleanField(verbose_name='Новинка', )
     description = models.TextField(verbose_name='Описание картины', null=True, blank=True)
     slug = models.SlugField(
-        verbose_name='Url', null=True, blank=True,
+        verbose_name='Url',
         unique=True
     )
     my_order = models.PositiveIntegerField(verbose_name='Сорт.', default=0, blank=False, null=False)
@@ -44,7 +44,7 @@ class Painting(models.Model):
 class PaintingImages(models.Model):
     image = models.ImageField(verbose_name='Фото', max_length=255, upload_to=image_directory_path)
     image_painting = models.ForeignKey(Painting, on_delete=models.CASCADE, verbose_name='Картина',
-                                       related_name='painting_gallery', null=True, blank=True)
+                                       related_name='painting_gallery', blank=False, null=False)
 
     class Meta:
         verbose_name = 'Фотография картины'
