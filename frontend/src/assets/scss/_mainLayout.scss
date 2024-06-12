@@ -11,7 +11,7 @@
 
 .content-wrapper {
   flex: 3;
-  width: 100%;
+  //width: 100%;
   display: flex;
   //justify-content: center;
   flex-direction: column;
@@ -19,7 +19,7 @@
 }
 
 .container {
-  margin: 0 20px;
+  //margin: 0 20px;
   @media #{$mobile-layout} {
     width: 100%;
 
@@ -37,15 +37,15 @@
 
 .content {
   @media #{$mobile-layout} {
-    padding: 10px 0 50px;
+    padding: 10px 20px 50px;
   }
   @media #{$tab-layout} {
-    padding: 10px 0 50px;
+    padding: 10px 20px 50px;
   }
   @media #{$desktop-layout} {
-    padding: 10px 0 80px;
+    padding: 10px 20px 80px;
   }
   @media #{$xl-layout} {
-    padding: 10px 0 80px;
+    padding: 10px 20px 80px;
   }
 }
