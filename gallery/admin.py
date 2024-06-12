@@ -44,6 +44,7 @@ class PaintingImageInline(admin.TabularInline):
 
 class PaintingAdmin(SortableAdminMixin, admin.ModelAdmin):
     list_display = ['name', 'new', 'price', 'my_order']
+    prepopulated_fields = {"slug": ("name",)}
     inlines = [
         PaintingImageInline,
     ]
