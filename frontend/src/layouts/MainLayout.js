@@ -30,10 +30,10 @@ const MainLayout = ({children, breadcrumbs}) => {
       <Subscription/>
       <div className="main_layout">
         <Header/>
-        <div className="breadcrumbs container">
+        <div className="content-wrapper">
+          <div className="breadcrumbs container">
             <Breadcrumbs items={breadcrumbs}/>
           </div>
-        <div className="content-wrapper">
           <div className="content container">
             {children}
           </div>
