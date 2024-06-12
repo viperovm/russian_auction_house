@@ -10,21 +10,21 @@ const ShopPage = () => {
 
   const [page, setPage] = useState(null)
 
-  let { item } = useParams();
+  let { lot } = useParams();
 
   console.log(page)
-  console.log(item)
+  console.log(lot)
 
 
   useEffect(() => {
     pages.map(p => {
-      if(item && p.slug === `shop/${item}`){
+      if(lot && p.slug === `shop/${lot}`){
         setPage(p)
-      } else if (!item && p.slug === 'shop') {
+      } else if (!lot && p.slug === 'shop') {
         setPage(p)
       }
     })
-  }, [item, pages])
+  }, [lot, pages])
 
   const breadcrumbs = [
     {
@@ -33,10 +33,10 @@ const ShopPage = () => {
     },
     {
       name: 'Магазин',
-      url: item? '/shop' : ''
+      url: lot? '/shop' : ''
     },
     {
-      name: item? page?.name : '',
+      name: lot? page?.name : '',
     },
   ]
 
@@ -46,7 +46,7 @@ const ShopPage = () => {
       {page && <div
         dangerouslySetInnerHTML={{__html: page?.description}}
       />}
-      {!item && <Gallery shop={true}/>}
+      {!lot && <Gallery shop={true}/>}
 
       {/*<>*/}
       {/*  <h1>*/}

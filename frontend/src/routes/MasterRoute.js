@@ -16,7 +16,7 @@ const MasterRoute = () => {
           element={<AboutPage />}
         />
         <Route
-          path={`/shop/:item?`}
+          path={`/shop/:lot?`}
           element={<ShopPage />}
         />
 
