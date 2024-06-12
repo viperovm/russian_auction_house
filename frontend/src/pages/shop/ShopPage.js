@@ -16,11 +16,11 @@ const ShopPage = () => {
 
 
   useEffect(() => {
-    pages.map(item => {
-      if(item && item.url === `shop/${item}`){
-        setPage(item)
-      } else if (!item && item.url === 'shop') {
-        setPage(item)
+    pages.map(p => {
+      if(item && p.url === `shop/${item}`){
+        setPage(p)
+      } else if (!item && p.url === 'shop') {
+        setPage(p)
       }
     })
   }, [item, pages])
