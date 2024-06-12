@@ -2,17 +2,19 @@ import React, {useEffect, useState} from "react";
 import MainLayout from "../../layouts/MainLayout";
 import AboutGallery from "./AboutGallery";
 import {useSelector} from "react-redux";
+import { useParams } from "react-router-dom";
 
-const AboutPage = (props) => {
+const AboutPage = () => {
 
   const { pages } = useSelector(state => state.site)
 
   const [page, setPage] = useState(null)
 
+  let { doc } = useParams();
+
   console.log(page)
-  console.log(props)
-  console.log(props?.match)
-  console.log(props?.match?.params)
+  console.log(doc)
+
 
   useEffect(() => {
     pages.map(item => {
