@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'debug_toolbar',
     'adminsortable2',
+    "django_autoslug",
     # ckeditor
     'django_ckeditor_5',
     # CORS

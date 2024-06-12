@@ -4,6 +4,7 @@ import os
 from django.template.defaultfilters import slugify
 from unidecode import unidecode
 from django.utils.text import slugify
+from django_autoslug.fields import AutoSlugField
 
 
 def image_directory_path(instance, filename):
@@ -21,10 +22,7 @@ class Painting(models.Model):
     discount = models.PositiveIntegerField(verbose_name='Размер скидки', null=True, blank=True)
     new = models.BooleanField(verbose_name='Новинка', )
     description = models.TextField(verbose_name='Описание картины', null=True, blank=True)
-    slug = models.SlugField(
-        verbose_name='Url',
-        unique=True
-    )
+    slug = AutoSlugField(populate_from=('name',), prefix_from=('id',), unique=True, max_length=30, overwrite=True)
     my_order = models.PositiveIntegerField(verbose_name='Сорт.', default=0, blank=False, null=False)
 
     def __str__(self):
@@ -35,10 +33,10 @@ class Painting(models.Model):
         verbose_name_plural = 'Картины'
         ordering = ['my_order']
 
-    def save(self, *args, **kwargs):
-        if not self.slug:
-            self.slug = slugify(self.name)
-        super().save(*args, **kwargs)
+    # def save(self, *args, **kwargs):
+    #     if not self.slug:
+    #         self.slug = slugify(self.name)
+    #     super().save(*args, **kwargs)
 
 
 class PaintingImages(models.Model):
