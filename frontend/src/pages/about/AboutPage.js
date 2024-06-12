@@ -18,11 +18,13 @@ const AboutPage = () => {
 
   useEffect(() => {
     pages.map(item => {
-      if (item.url === 'about') {
+      if(doc && item.url === `about/${doc}`){
+        setPage(item)
+      } else if (!doc && item.url === 'about') {
         setPage(item)
       }
     })
-  }, [pages])
+  }, [doc, pages])
 
   const breadcrumbs = [
     {
@@ -31,6 +33,10 @@ const AboutPage = () => {
     },
     {
       name: 'О нас',
+      url: doc? '/' : ''
+    },
+    {
+      name: doc? doc.name : '',
     },
   ]
 
@@ -40,7 +46,7 @@ const AboutPage = () => {
       {page && <div
         dangerouslySetInnerHTML={{__html: page?.description}}
       />}
-      <AboutGallery/>
+      {!doc && <AboutGallery/>}
 
       {/*<>*/}
       {/*  <h1>*/}
