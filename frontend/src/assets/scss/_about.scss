@@ -27,6 +27,11 @@
   }
 }
 
+.about_gallery_item_wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
 .about_gallery_item {
   object-fit: cover;
 }

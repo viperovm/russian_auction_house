@@ -1,6 +1,6 @@
 import React, { useRef, useLayoutEffect, useState, useEffect } from 'react';
 
-const GalleryItem = ({img, mob}) => {
+const GalleryItem = ({img, mob, shop}) => {
 
   const targetRef = useRef();
   const [width, setWidth] = useState(0);
@@ -21,7 +21,14 @@ const GalleryItem = ({img, mob}) => {
   }, [width, mob])
 
   return (
-    <img className="about_gallery_item" ref={targetRef} src={img} alt="" height={height}/>
+    <div className="about_gallery_item_wrapper">
+      <img className="about_gallery_item" ref={targetRef} src={img} alt="" height={height}/>
+      {shop && <div className="about_gallery_item_description">
+        <div className="about_gallery_item_name">{img?.name}</div>
+        <div className="about_gallery_item_price">{img?.price}</div>
+      </div>}
+    </div>
+
   );
 };
 
