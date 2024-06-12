@@ -4,7 +4,7 @@ from adminsortable2.admin import SortableAdminMixin
 
 
 class PageAdmin(SortableAdminMixin, admin.ModelAdmin):
-    list_display = ['name', 'url', 'description', 'is_active', 'my_order']
+    list_display = ['my_order', 'name', 'url', 'is_active']
 
 
 admin.site.register(Page, PageAdmin)
