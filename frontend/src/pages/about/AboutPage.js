@@ -10,7 +10,7 @@ const AboutPage = ({match}) => {
   const [page, setPage] = useState(null)
 
   console.log(page)
-  console.log(match.params)
+  console.log(match?.params)
 
   useEffect(() => {
     pages.map(item => {
