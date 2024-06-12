@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import MainLayout from "../../layouts/MainLayout";
-import AboutGallery from "./AboutGallery";
+import Gallery from "../../components/gallery/Gallery";
 import {useSelector} from "react-redux";
 import { useParams } from "react-router-dom";
 
@@ -46,7 +46,7 @@ const AboutPage = () => {
       {page && <div
         dangerouslySetInnerHTML={{__html: page?.description}}
       />}
-      {!doc && <AboutGallery/>}
+      {!doc && <Gallery/>}
 
       {/*<>*/}
       {/*  <h1>*/}

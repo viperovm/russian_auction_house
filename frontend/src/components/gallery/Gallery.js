@@ -5,7 +5,7 @@ import img3 from '../../assets/img/aboutGallery/3.jpg'
 import img4 from '../../assets/img/aboutGallery/4.jpg'
 import GalleryItem from "./GalleryItem";
 
-const AboutGallery = () => {
+const Gallery = () => {
 
   const gal = [
     {
@@ -22,6 +22,22 @@ const AboutGallery = () => {
     },
     {
       id: 4,
+      img: img4,
+    },
+    {
+      id: 5,
+      img: img1,
+    },
+    {
+      id: 6,
+      img: img2,
+    },
+    {
+      id: 7,
+      img: img3,
+    },
+    {
+      id: 8,
       img: img4,
     },
   ]
@@ -51,4 +67,4 @@ const AboutGallery = () => {
   )
 }
 
-export default AboutGallery
+export default Gallery
