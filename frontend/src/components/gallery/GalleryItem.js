@@ -1,6 +1,9 @@
 import React, { useRef, useLayoutEffect, useState, useEffect } from 'react';
+import {useNavigate} from "react-router";
 
 const GalleryItem = ({img, mob, shop}) => {
+
+  let navigate = useNavigate();
 
   const targetRef = useRef();
   const [width, setWidth] = useState(0);
@@ -20,8 +23,12 @@ const GalleryItem = ({img, mob, shop}) => {
     }
   }, [width, mob])
 
+  const clickHandler = () => {
+    return navigate(`/shop/${img.id}`);
+  }
+
   return (
-    <div className="about_gallery_item_wrapper">
+    <div className="about_gallery_item_wrapper" onClick={clickHandler}>
       <img className="about_gallery_item" ref={targetRef} src={img?.painting_gallery[0]?.image} alt="" height={height}/>
       {shop && <div className="about_gallery_item_description">
         {img?.name && <div className="about_gallery_item_name">{img?.name}</div>}
