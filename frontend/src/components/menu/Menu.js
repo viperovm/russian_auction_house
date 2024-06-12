@@ -3,7 +3,7 @@ import MenuItem from "./MenuItem";
 import {useSelector} from "react-redux";
 
 
-const Menu = ({type, doc, items}) => {
+const Menu = ({type, doc=false, items}) => {
 
   const { pages } = useSelector(state => state.site)
 

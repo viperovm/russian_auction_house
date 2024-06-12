@@ -26,7 +26,7 @@ const MasterRoute = () => {
           element={<TradingRules />}
         />
         <Route
-          path={`/personal-agreement`}
+          path={`/about/personal-agreement`}
           element={<PersonalAgreement />}
         />
 
