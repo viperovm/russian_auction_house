@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'adminsortable2',
     "django_autoslug",
+    "services",
     # ckeditor
     'django_ckeditor_5',
     # CORS
@@ -39,6 +40,7 @@ INSTALLED_APPS = [
     'contacts.apps.ContactsConfig',
     'gallery.apps.GalleryConfig',
     'pages.apps.PagesConfig'
+
 ]
 
 # REST_FRAMEWORK = {

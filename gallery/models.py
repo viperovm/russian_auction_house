@@ -4,6 +4,7 @@ import os
 from django.template.defaultfilters import slugify
 from unidecode import unidecode
 from django.utils.text import slugify
+from services.utils import unique_slugify
 
 
 def image_directory_path(instance, filename):
@@ -34,6 +35,11 @@ class Painting(models.Model):
         verbose_name = 'Картина'
         verbose_name_plural = 'Картины'
         ordering = ['my_order']
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = unique_slugify(self, self.name)
+        super().save(*args, **kwargs)
 
 
 class PaintingImages(models.Model):
