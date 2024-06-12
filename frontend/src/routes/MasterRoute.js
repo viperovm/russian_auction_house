@@ -1,8 +1,6 @@
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom"
 import AboutPage from "../pages/about/AboutPage"
 import ShopPage from "../pages/shop/ShopPage"
-import TradingRules from "../pages/docs/TradingRules";
-import PersonalAgreement from "../pages/docs/PersonalAgreement";
 
 const MasterRoute = () => {
 
@@ -18,12 +16,8 @@ const MasterRoute = () => {
           element={<AboutPage />}
         />
         <Route
-          path={`/shop`}
-          element={<AboutPage />}
-        />
-        <Route
-          path={`/trading-rules`}
-          element={<TradingRules />}
+          path={`/shop/:item?`}
+          element={<ShopPage />}
         />
 
       </Routes>
