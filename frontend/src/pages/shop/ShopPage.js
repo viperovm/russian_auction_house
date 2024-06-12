@@ -45,7 +45,6 @@ const ShopPage = () => {
       {page && <div
         dangerouslySetInnerHTML={{__html: page?.description}}
       />}
-      {!item && <AboutGallery/>}
 
       {/*<>*/}
       {/*  <h1>*/}
