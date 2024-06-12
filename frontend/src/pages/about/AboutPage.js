@@ -18,9 +18,9 @@ const AboutPage = () => {
 
   useEffect(() => {
     pages.map(p => {
-      if(doc && p.url === `about/${doc}`){
+      if(doc && p.slug === `about/${doc}`){
         setPage(p)
-      } else if (!doc && p.url === 'about') {
+      } else if (!doc && p.slug === 'about') {
         setPage(p)
       }
     })

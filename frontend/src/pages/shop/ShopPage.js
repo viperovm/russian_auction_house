@@ -18,9 +18,9 @@ const ShopPage = () => {
 
   useEffect(() => {
     pages.map(p => {
-      if(item && p.url === `shop/${item}`){
+      if(item && p.slug === `shop/${item}`){
         setPage(p)
-      } else if (!item && p.url === 'shop') {
+      } else if (!item && p.slug === 'shop') {
         setPage(p)
       }
     })
