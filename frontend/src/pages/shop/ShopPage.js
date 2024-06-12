@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import MainLayout from "../../layouts/MainLayout";
 import {useSelector} from "react-redux";
 import {useParams} from "react-router-dom";
+import Gallery from "../../components/gallery/Gallery";
 
 const ShopPage = () => {
 
@@ -45,6 +46,7 @@ const ShopPage = () => {
       {page && <div
         dangerouslySetInnerHTML={{__html: page?.description}}
       />}
+      <Gallery shop={true}/>
 
       {/*<>*/}
       {/*  <h1>*/}

@@ -4,8 +4,20 @@ import img2 from '../../assets/img/aboutGallery/2.jpg'
 import img3 from '../../assets/img/aboutGallery/3.jpg'
 import img4 from '../../assets/img/aboutGallery/4.jpg'
 import GalleryItem from "./GalleryItem";
+import {useDispatch, useSelector} from "react-redux";
+import {paintingsAction} from "../../store/actions/siteActions";
 
-const Gallery = () => {
+const Gallery = ({shop=false}) => {
+
+  const dispatch = useDispatch()
+
+  const { paintings } = useSelector(state => state.site)
+
+  useEffect(() => {
+    if(paintings.length === 0){
+      dispatch(paintingsAction())
+    }
+  },[paintings])
 
   const gal = [
     {
@@ -62,7 +74,13 @@ const Gallery = () => {
 
   return (
     <div ref={targetRef} className="about_gallery">
-      {gal?.map((d, k) => <GalleryItem key={k} img={d.img} mob={mob} />)}
+      {paintings?.map((d, k) => {
+        if (!shop && k<=3) {
+          return <GalleryItem key={k} img={d.img} mob={mob} shop={shop}/>
+        } else {
+          return <GalleryItem key={k} img={d.img} mob={mob} shop={shop}/>
+        }
+      })}
     </div>
   )
 }
