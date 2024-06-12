@@ -8,3 +8,15 @@
   justify-content: center;
   border-bottom: 1px solid rgba(29, 29, 29, 0.25);
 }
+
+.breadcrumbs_item_link {
+  display: block;
+  &::after {
+    content: '/';
+    margin: 0 10px;
+  }
+  &--disabled {
+    pointer-events: none;
+    font-weight: bold;
+  }
+}
