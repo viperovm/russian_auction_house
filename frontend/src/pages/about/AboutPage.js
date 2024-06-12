@@ -33,7 +33,7 @@ const AboutPage = () => {
     },
     {
       name: 'О нас',
-      url: doc? '/' : ''
+      url: doc? '/about' : ''
     },
     {
       name: doc? page?.name : '',
