@@ -49,16 +49,16 @@ const ShopModal = () => {
           <h1>Покупка</h1>
           <p>Для приобретения предмета искусства, заполните форму и мы свяжемся с Вами.</p>
           <form onSubmit={submitHandler}>
-            <Input type="text" name="name" label="Имя" placeholder="Введите Ваше имя" required={true} data={data.name}
+            <Input type="text" name="name" label="Имя" placeholder="Введите Ваше имя" required={true} data={data?.name}
                    handler={changeHandler}/>
             <Input type="phone" name="phone" label="Номер телефона" placeholder="Введите Ваш номер телефона"
-                   required={true} data={data.phone}
+                   required={true} data={data?.phone}
                    handler={changeHandler}/>
             <Input type="email" name="email" label="Email" placeholder="Введите Ваш email" required={true}
-                   data={data.email}
+                   data={data?.email}
                    handler={changeHandler}/>
             <Input type="textarea" name="extra" label="Дополнительная информация" placeholder="" required={false}
-                   data={data.extra}
+                   data={data?.extra}
                    handler={changeHandler}/>
             <input className="submit-button" type="submit"/>
           </form>
