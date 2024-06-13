@@ -56,26 +56,24 @@ def get_photo(obj):
         return '-'
 
 
-class PaintingInline(admin.TabularInline):
-
-    model = Painting
-    readonly_fields = ('get_photo',)
-    fieldsets = ((None, {'fields': ('get_photo', 'name', 'artist')}),)
+class PaintingRequestsAdmin(admin.ModelAdmin):
+    list_display = ['get_photo', 'requested_painting', 'get_artist', 'name', 'phone', 'email']
 
     def get_photo(self, obj):
-        if obj.painting_gallery[0].image:
-            return mark_safe(f'<a href={obj.painting_gallery[0].image} target="_blank"><img src="{obj.painting_gallery[0].image}" width="45"></a>')
+        if obj.requested_painting.painting_gallery[0].image:
+            return mark_safe(
+                f'<a href={obj.requested_painting.painting_gallery[0].image} target="_blank"><img src="{obj.requested_painting.painting_gallery[0].image}" width="45"></a>')
+        else:
+            return '-'
+
+    def get_artist(self, obj):
+        if obj.requested_painting.artist:
+            return obj.requested_painting.artist
         else:
             return '-'
 
     get_photo.short_description = 'Миниатюра'
-
-
-class PaintingRequestsAdmin(admin.ModelAdmin):
-    list_display = ['requested_painting', 'name', 'phone', 'email']
-    inlines = [
-        PaintingInline,
-    ]
+    get_artist.short_description = 'Автор'
 
 
 admin.site.register(PaintingImages)
