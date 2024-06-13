@@ -2,7 +2,7 @@ import React from 'react';
 import required_img from '../../assets/img/required.svg'
 import {useMask} from '@react-input/mask';
 
-const Input = ({type, name, required, placeholder, label, data, handler}) => {
+const Input = ({type, name, required, placeholder, label, data, handler, rows='4'}) => {
 
 
   const inputRef = useMask({mask: '+7 (___) ___-__-__', replacement: {_: /\d/}});
@@ -40,7 +40,7 @@ const Input = ({type, name, required, placeholder, label, data, handler}) => {
       {type === 'phone' &&
       <input className="input-phone" name={name} ref={inputRef} type="text" placeholder="+7 (___) ___-__-__"
              value={data} onChange={phoneHandler} autoComplete="none" />}
-      {type === 'textarea' && <textarea name={name} value={data} onChange={e => handler(e)}/>}
+      {type === 'textarea' && <textarea name={name} placeholder={placeholder} rows={rows} value={data} onChange={e => handler(e)}/>}
     </div>
   );
 };
