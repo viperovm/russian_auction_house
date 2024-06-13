@@ -8,6 +8,8 @@ import IconButton from "./Buttons/IconButton";
 import WhatsApp from "./icons/WhatsApp";
 import Tg from "./icons/Tg";
 import Menu from "./menu/Menu";
+import {modalAction} from "../store/actions/siteActions";
+import AppealModal from "./appeal/AppealModal";
 
 const Footer = () => {
 
@@ -57,8 +59,14 @@ const Footer = () => {
     },
   ]
 
+  const clickHandler = () => {
+    dispatch(modalAction('appeal_modal'))
+  }
+
   return (
-    <div className="footer_container">
+    <>
+      <AppealModal/>
+      <div className="footer_container">
       <div className="footer_data">
         <div className="info">
           <Logo theme="light" link={false} footer={true}/>
@@ -98,14 +106,15 @@ const Footer = () => {
               +7 977 273-60-62
             </a>
           </div>
-          <TextButton text="Связаться с нами" action={() => {
-          }}/>
+          <TextButton text="Связаться с нами" action={clickHandler}/>
         </div>
       </div>
       <div className="all_rights_r">
         {`${new Date().getFullYear()} © Все права защищены`}
       </div>
     </div>
+    </>
+
   );
 };
 

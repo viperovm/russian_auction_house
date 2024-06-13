@@ -108,3 +108,22 @@ export const paintingRequestsAction = async (data) => {
   }
 }
 
+export const appealAction = async (data) => {
+
+  const config = {
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+    }
+  };
+
+  const body = JSON.stringify(data)
+
+  try {
+    return await axios.post(`https://art-bid.ru/api/appeal/`, body, config);
+
+  } catch (err) {
+    return err
+  }
+}
+
