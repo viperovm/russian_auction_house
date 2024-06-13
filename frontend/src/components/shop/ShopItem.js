@@ -1,8 +1,11 @@
 import React from 'react';
 import {getProperPrice} from "../../functions/price";
 import {modalAction} from "../../store/actions/siteActions";
+import {useDispatch} from "react-redux";
 
 const ShopItem = ({data}) => {
+
+  const dispatch = useDispatch()
 
   const clickHandler = () => {
     dispatch(modalAction('shop_modal'))
