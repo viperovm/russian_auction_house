@@ -32,6 +32,7 @@ const ShopModal = () => {
       .then(result => {
         if (result.status === 201) {
           dispatch(modalAction(''))
+          setData(null)
         } else {
           console.error(result)
         }
