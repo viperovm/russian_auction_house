@@ -71,7 +71,7 @@ class PaintingRequestsAdmin(admin.ModelAdmin):
     def get_painting(self, obj):
         if obj.requested_painting.name and obj.requested_painting.slug:
             return mark_safe(
-                f'<a href={obj.requested_painting.slug} target="_blank">{obj.requested_painting.name}</a>'
+                f'<a href={"https://art-bid.ru/shop/" + obj.requested_painting.slug} target="_blank">{obj.requested_painting.name}</a>'
             )
         elif obj.requested_painting.name:
             return obj.requested_painting.name
