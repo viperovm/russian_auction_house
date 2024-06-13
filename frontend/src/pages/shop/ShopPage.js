@@ -32,18 +32,14 @@ const ShopPage = () => {
   console.log(img)
 
   useEffect(() => {
-    const arr = []
-    if(painting && Array.isArray(painting?.painting_gallery) && painting?.painting_gallery.length>0){
-      painting?.painting_gallery.map(i => {
-        console.log(i)
-        console.log(i.image)
-        arr.push(i.image)
-        console.log(arr)
-        // return [...arr, i.image]
-      })
+    if(painting && Array.isArray(painting?.painting_gallery) && painting?.painting_gallery?.length){
+      setImg(painting?.painting_gallery?.map(item => {
+        return {
+          original: item.image,
+          thumbnail: item.image,
+        }
+      }))
     }
-    console.log(arr)
-    setImg(arr)
   }, [painting])
 
   const breadcrumbs = [
