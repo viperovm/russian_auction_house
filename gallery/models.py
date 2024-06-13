@@ -63,7 +63,7 @@ class PaintingImages(models.Model):
 
 class PaintingRequests(models.Model):
     name = models.CharField(max_length=170, verbose_name='Имя', blank=True, null=True)
-    phone = models.CharField(max_length=15, verbose_name='Телефон', blank=True, null=True)
+    phone = models.CharField(max_length=25, verbose_name='Телефон', blank=True, null=True)
     email = models.CharField(max_length=170, verbose_name='Email', blank=True, null=True)
     extra = models.TextField(verbose_name='Дополнительная информация', null=True, blank=True)
     requested_painting = models.ForeignKey(Painting, on_delete=models.CASCADE, verbose_name='Предмет запроса',
