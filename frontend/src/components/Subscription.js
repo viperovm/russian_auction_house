@@ -52,8 +52,8 @@ const Subscription = () => {
     }
   }
 
-  const changeHandler = (v) => {
-    setData(v)
+  const changeHandler = (e) => {
+    setData(e.target.value)
   }
 
   return (
