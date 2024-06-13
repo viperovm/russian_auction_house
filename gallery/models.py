@@ -36,7 +36,7 @@ class Painting(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.slug:
-            self.slug = unique_slugify(self, self.name)
+            self.slug = unique_slugify(self, '{}-{}'.format(self.artist, self.name))
         super().save(*args, **kwargs)
 
 
