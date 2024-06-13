@@ -57,7 +57,7 @@ const ShopModal = () => {
             <Input type="email" name="email" label="Email" placeholder="Введите Ваш email" required={true}
                    data={data?.email}
                    handler={changeHandler}/>
-            <Input type="textarea" name="extra" label="Дополнительная информация" placeholder="" required={false}
+            <Input type="textarea" name="extra" label="Дополнительная информация" placeholder="Введите Ваш текст" required={false}
                    data={data?.extra}
                    handler={changeHandler}/>
             <input className="submit-button" type="submit"/>
