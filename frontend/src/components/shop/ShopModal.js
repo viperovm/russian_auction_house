@@ -30,7 +30,7 @@ const ShopModal = () => {
 
     paintingRequestsAction(data)
       .then(result => {
-        if (result.status === 200) {
+        if (result.status === 201) {
           dispatch(modalAction(''))
         } else {
           console.error(result)
