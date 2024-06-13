@@ -43,7 +43,7 @@ class PaintingImageInline(admin.TabularInline):
 
 
 class PaintingAdmin(SortableAdminMixin, admin.ModelAdmin):
-    list_display = ['my_order', 'name', 'artist', 'new', 'price']
+    list_display = ['my_order', 'is_active', 'name', 'artist', 'new', 'price']
     inlines = [
         PaintingImageInline,
     ]

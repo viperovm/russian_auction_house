@@ -17,14 +17,15 @@ def image_directory_path(instance, filename):
 
 
 class Painting(models.Model):
-    name = models.CharField(max_length=170, verbose_name='Название картины', blank=False, null=False)
-    artist = models.CharField(max_length=255, verbose_name='Художник', null=True, blank=True)
+    name = models.CharField(max_length=170, verbose_name='Название лота', blank=False, null=False)
+    is_active = models.BooleanField(verbose_name='Активный лот', )
+    artist = models.CharField(max_length=255, verbose_name='Автор', null=True, blank=True)
     price = models.PositiveIntegerField(verbose_name='Цена', null=True, blank=True)
     new_price = models.PositiveIntegerField(verbose_name='Новая цена', null=True, blank=True)
     discount = models.PositiveIntegerField(verbose_name='Размер скидки', null=True, blank=True)
     new = models.BooleanField(verbose_name='Новинка', )
     short_description = models.TextField(verbose_name='Короткое описание', null=True, blank=True)
-    description = CKEditor5Field(verbose_name='Описание картины', null=True, blank=True, config_name='default')
+    description = CKEditor5Field(verbose_name='Описание лота', null=True, blank=True, config_name='default')
     slug = models.CharField(verbose_name='Url', blank=True)
     my_order = models.PositiveIntegerField(verbose_name='Сорт.', default=0, blank=False, null=False)
 
@@ -32,8 +33,8 @@ class Painting(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = 'Картина'
-        verbose_name_plural = 'Картины'
+        verbose_name = 'Лот'
+        verbose_name_plural = 'Лоты'
         ordering = ['my_order']
 
     def save(self, *args, **kwargs):
@@ -44,12 +45,12 @@ class Painting(models.Model):
 
 class PaintingImages(models.Model):
     image = models.ImageField(verbose_name='Фото', max_length=255, upload_to=image_directory_path)
-    image_painting = models.ForeignKey(Painting, on_delete=models.CASCADE, verbose_name='Картина',
+    image_painting = models.ForeignKey(Painting, on_delete=models.CASCADE, verbose_name='Лот',
                                        related_name='painting_gallery', blank=False, null=False)
 
     class Meta:
-        verbose_name = 'Фотография картины'
-        verbose_name_plural = 'Фотографии картины'
+        verbose_name = 'Фотография лота'
+        verbose_name_plural = 'Фотографии лотов'
         ordering = ['id']
 
     def __str__(self):
@@ -66,7 +67,7 @@ class PaintingRequests(models.Model):
     phone = models.CharField(max_length=25, verbose_name='Телефон', blank=True, null=True)
     email = models.CharField(max_length=170, verbose_name='Email', blank=True, null=True)
     extra = models.TextField(verbose_name='Дополнительная информация', null=True, blank=True)
-    requested_painting = models.ForeignKey(Painting, on_delete=models.CASCADE, verbose_name='Предмет запроса',
+    requested_painting = models.ForeignKey(Painting, on_delete=models.SET_NULL, verbose_name='Предмет запроса',
                                            related_name='painting_requests', blank=False, null=False)
 
     class Meta:
