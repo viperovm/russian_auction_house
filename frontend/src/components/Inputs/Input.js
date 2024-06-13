@@ -8,17 +8,19 @@ const Input = ({type, name, required, placeholder, label, data, handler}) => {
   const inputRef = useMask({mask: '+7 (___) ___-__-__', replacement: {_: /\d/}});
 
   const phoneHandler = e => {
-    if(!data?.phone) {
-      if(e.target.value[0] !== '9') {
-        let d = {
-          target: {
-            name: 'phone',
-            value: ''
-          }
-        }
-        handler(d)
-      }
-    }
+    console.log(e.target.value)
+    handler(e)
+    // if(!data?.phone) {
+    //   if(e.target.value[0] !== '9') {
+    //     let d = {
+    //       target: {
+    //         name: 'phone',
+    //         value: e.target.value.slice(1)
+    //       }
+    //     }
+    //     handler(d)
+    //   }
+    // }
   }
 
 
