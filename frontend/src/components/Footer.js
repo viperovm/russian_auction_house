@@ -68,7 +68,6 @@ const Footer = () => {
 
   return (
     <>
-      <AppealModal/>
       <div className="footer_container">
       <div className="footer_data">
         <div className="info">

@@ -6,6 +6,7 @@ import Subscription from "../components/Subscription";
 import {useDispatch, useSelector} from "react-redux";
 import {pagesAction} from "../store/actions/siteActions";
 import Breadcrumbs from "../components/breadcrumbs/Breadcrumbs";
+import AppealModal from "../components/appeal/AppealModal";
 
 const MainLayout = ({children, breadcrumbs}) => {
 
@@ -28,6 +29,7 @@ const MainLayout = ({children, breadcrumbs}) => {
   return (
     <>
       <Subscription/>
+      <AppealModal/>
       <div className="main_layout">
         <Header/>
         <div className="content-wrapper">
