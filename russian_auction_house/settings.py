@@ -256,3 +256,17 @@ CKEDITOR_5_CONFIGS = {
         }
     }
 }
+
+ADMINS = [('Slava', 'viperovm@yandex.ru')]
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_PORT = 465
+EMAIL_USE_SSL = True
+
+EMAIL_HOST_USER = 'info@art-bid.ru'
+EMAIL_HOST_PASSWORD = 'fibrvynxvgbjxaby'
+# EMAIL_HOST_PASSWORD = 'cDjaw5eU9rdwYaNqJsQd'
+
+SERVER_EMAIL = EMAIL_HOST_USER
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
