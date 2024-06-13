@@ -65,7 +65,8 @@ class PaintingRequestsAdmin(admin.ModelAdmin):
         'get_artist',
         'name',
         'phone',
-        'email'
+        'email',
+        'extra'
     ]
 
     def get_painting(self, obj):
