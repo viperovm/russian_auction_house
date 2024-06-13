@@ -37,7 +37,7 @@ const ShopPage = () => {
       url: lot? '/shop' : ''
     },
     {
-      name: lot? painting?.name : '',
+      name: lot? painting?.artist + ' | ' + painting?.name : '',
     },
   ]
 
