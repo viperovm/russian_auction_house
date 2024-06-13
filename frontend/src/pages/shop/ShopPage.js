@@ -39,10 +39,11 @@ const ShopPage = () => {
         console.log(i.image)
         arr.push(i.image)
         console.log(arr)
-        return [...arr, i.image]
+        // return [...arr, i.image]
       })
     }
     console.log(arr)
+    setImg(arr)
   }, [painting])
 
   const breadcrumbs = [
