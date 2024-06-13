@@ -68,7 +68,9 @@ const ShopPage = () => {
       {!lot && <Gallery shop={true}/>}
       {lot && <div className="shop-item-wrapper">
         <div className="shop-item-column">
-          <ImageGallery items={img}/>
+          <div className="shop-item-gallery-wrapper">
+            <ImageGallery items={img}/>
+          </div>
         </div>
         <div className="shop-item-column">
           <ShopItem data={painting}/>
