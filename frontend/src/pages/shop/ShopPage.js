@@ -13,6 +13,7 @@ const ShopPage = () => {
   const { pages, painting } = useSelector(state => state.site)
 
   const [page, setPage] = useState(null)
+  const [img, setImg] = useState([])
 
   let { lot } = useParams();
 
@@ -28,6 +29,13 @@ const ShopPage = () => {
     }
   }, [lot, pages])
 
+  useEffect(() => {
+    setImg([])
+    if(painting && Array.isArray(painting?.painting_gallery) && painting?.painting_gallery.length>0){
+      painting?.painting_gallery.map(i => setImg(prev => [...prev, i.image]))
+    }
+  }, [painting])
+
   const breadcrumbs = [
     {
       name: 'Главная',
@@ -42,6 +50,8 @@ const ShopPage = () => {
     },
   ]
 
+  console.log(painting)
+
   return (
     <MainLayout breadcrumbs={breadcrumbs}>
 
@@ -49,7 +59,7 @@ const ShopPage = () => {
         dangerouslySetInnerHTML={{__html: page?.description}}
       />}
       {!lot && <Gallery shop={true}/>}
-      {lot && <ImageGallery items={painting?.painting_gallery}/>}
+      {lot && <ImageGallery items={img}/>}
 
       {/*<>*/}
       {/*  <h1>*/}
