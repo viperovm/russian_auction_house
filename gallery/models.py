@@ -68,7 +68,7 @@ class PaintingRequests(models.Model):
     email = models.CharField(max_length=170, verbose_name='Email', blank=True, null=True)
     extra = models.TextField(verbose_name='Дополнительная информация', null=True, blank=True)
     requested_painting = models.ForeignKey(Painting, on_delete=models.SET_NULL, verbose_name='Предмет запроса',
-                                           related_name='painting_requests', blank=False, null=False)
+                                           related_name='painting_requests', blank=True, null=True)
 
     class Meta:
         verbose_name = 'Запрос на приобретение'
