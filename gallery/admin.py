@@ -57,14 +57,21 @@ def get_photo(obj):
 
 
 class PaintingRequestsAdmin(admin.ModelAdmin):
-    list_display = ['get_photo', 'requested_painting', 'get_artist', 'name', 'phone', 'email']
+    list_display = [
+        # 'get_photo',
+        'requested_painting',
+        'get_artist',
+        'name',
+        'phone',
+        'email'
+    ]
 
-    def get_photo(self, obj):
-        if obj.requested_painting.painting_gallery[0].image:
-            return mark_safe(
-                f'<a href={obj.requested_painting.painting_gallery[0].image} target="_blank"><img src="{obj.requested_painting.painting_gallery[0].image}" width="45"></a>')
-        else:
-            return '-'
+    # def get_photo(self, obj):
+    #     if obj.requested_painting.painting_gallery[0].image:
+    #         return mark_safe(
+    #             f'<a href={obj.requested_painting.painting_gallery[0].image} target="_blank"><img src="{obj.requested_painting.painting_gallery[0].image}" width="45"></a>')
+    #     else:
+    #         return '-'
 
     def get_artist(self, obj):
         if obj.requested_painting.artist:
@@ -72,7 +79,7 @@ class PaintingRequestsAdmin(admin.ModelAdmin):
         else:
             return '-'
 
-    get_photo.short_description = 'Миниатюра'
+    # get_photo.short_description = 'Миниатюра'
     get_artist.short_description = 'Автор'
 
 
