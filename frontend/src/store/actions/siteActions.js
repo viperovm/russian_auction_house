@@ -75,7 +75,7 @@ export const singlePaintingAction = (slug) => async dispatch => {
   };
 
   try {
-    const res = await axios.get(`https://art-bid.ru/api/painting/${slug}`, config);
+    const res = await axios.get(`https://art-bid.ru/api/painting/${slug}/`, config);
 
     dispatch({
       type: t.GET_PAINTING_SUCCESS,
