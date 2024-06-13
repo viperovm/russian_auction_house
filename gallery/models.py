@@ -60,3 +60,16 @@ class PaintingImages(models.Model):
         if not os.path.isfile(get_tmb_path(self)):
             create_crop_wout_tmb(self)
 
+
+class PaintingRequests(models.Model):
+    name = models.CharField(max_length=170, verbose_name='Имя', blank=True, null=True)
+    phone = models.CharField(max_length=15, verbose_name='Телефон', blank=True, null=True)
+    email = models.CharField(max_length=170, verbose_name='Email', blank=True, null=True)
+    extra = models.TextField(verbose_name='Дополнительная информация', null=True, blank=True)
+    requested_painting = models.ForeignKey(Painting, on_delete=models.CASCADE, verbose_name='Предмет запроса',
+                                           related_name='painting_requests', blank=False, null=False)
+
+    class Meta:
+        verbose_name = 'Запрос на приобретение'
+        verbose_name_plural = 'Запросы на приобретение'
+        ordering = ['id']

@@ -1,10 +1,16 @@
 from rest_framework import serializers
-from .models import Painting, PaintingImages
+from .models import Painting, PaintingImages, PaintingRequests
 
 
 class PaintingImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = PaintingImages
+        fields = '__all__'
+
+
+class PaintingRequestsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = PaintingRequests
         fields = '__all__'
 
 

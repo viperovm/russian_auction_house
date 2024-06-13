@@ -89,3 +89,22 @@ export const singlePaintingAction = (slug) => async dispatch => {
   }
 }
 
+export const paintingRequestsAction = async (data) => {
+
+  const config = {
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+    }
+  };
+
+  const body = JSON.stringify(data)
+
+  try {
+    return await axios.post(`https://art-bid.ru/api/painting_request/`, body, config);
+
+  } catch (err) {
+    return err
+  }
+}
+

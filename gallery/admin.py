@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.utils.safestring import mark_safe
 from adminsortable2.admin import SortableAdminMixin
-from .models import PaintingImages, Painting
+from .models import PaintingImages, Painting, PaintingRequests
 
 
 class PaintingImageAdmin(admin.ModelAdmin):
@@ -43,11 +43,23 @@ class PaintingImageInline(admin.TabularInline):
 
 
 class PaintingAdmin(SortableAdminMixin, admin.ModelAdmin):
-    list_display = ['name', 'artist', 'new', 'price', 'my_order']
+    list_display = ['my_order', 'name', 'artist', 'new', 'price']
     inlines = [
         PaintingImageInline,
     ]
 
 
+def get_photo(obj):
+    if obj.image:
+        return mark_safe(f'<a href={obj.image.url} target="_blank"><img src="{obj.image.url}" width="45"></a>')
+    else:
+        return '-'
+
+
+class PaintingRequestsAdmin(admin.ModelAdmin):
+    list_display = ['requested_painting', 'artist', 'name', 'phone', 'email']
+
+
 admin.site.register(PaintingImages)
 admin.site.register(Painting, PaintingAdmin)
+admin.site.register(PaintingRequests, PaintingRequestsAdmin)

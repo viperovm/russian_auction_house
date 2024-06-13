@@ -1,11 +1,13 @@
 import React, {useEffect, useState} from 'react';
-import {useDispatch} from "react-redux";
-import {modalAction} from "../../store/actions/siteActions";
+import {useDispatch, useSelector} from "react-redux";
+import {modalAction, paintingRequestsAction} from "../../store/actions/siteActions";
 import axios from "axios";
 import Modal from "../Modal";
 import Input from "../Inputs/Input";
 
 const ShopModal = () => {
+
+  const {painting} = useSelector(state => state.site)
 
   const dispatch = useDispatch()
 
@@ -13,26 +15,27 @@ const ShopModal = () => {
 
   console.log(data)
 
-
-  const submitHandler = async (e) => {
-    e.preventDefault()
-    const config = {
-      headers: {
-        'Access-Control-Allow-Origin': '*'
-      },
-      params: {
-        'email': data
-      }
-    };
-
-
-    try {
-      const res = await axios.get(`https://art-bid.ru/api/new_user/`, config);
-      localStorage.setItem('subscribed', JSON.stringify(Date.now()));
-      dispatch(modalAction(''))
-    } catch (e) {
-      console.error(e)
+  useEffect(() => {
+    if(painting) {
+      setData({
+      ...data,
+      requested_painting: painting?.id
+    })
     }
+  }, [painting])
+
+
+  const submitHandler = (e) => {
+    e.preventDefault()
+
+    paintingRequestsAction(data)
+      .then(result => {
+        if (result.status === 200) {
+          dispatch(modalAction(''))
+        } else {
+          console.error(result)
+        }
+      })
   }
 
   const changeHandler = (e) => {
@@ -57,7 +60,8 @@ const ShopModal = () => {
             <Input type="email" name="email" label="Email" placeholder="Введите Ваш email" required={true}
                    data={data?.email}
                    handler={changeHandler}/>
-            <Input type="textarea" name="extra" label="Дополнительная информация" placeholder="Введите Ваш текст" required={false}
+            <Input type="textarea" name="extra" label="Дополнительная информация" placeholder="Введите Ваш текст"
+                   required={false}
                    data={data?.extra}
                    handler={changeHandler}/>
             <input className="submit-button" type="submit"/>
