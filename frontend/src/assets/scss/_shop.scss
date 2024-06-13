@@ -3,7 +3,7 @@
 .shop-item-wrapper {
   display: flex;
   gap: 30px;
-  margin-top: 5px;
+  margin-top: 15px;
   @media #{$mobile-layout} {
     flex-direction: column;
   }
