@@ -24,6 +24,8 @@ const ShopPage = () => {
 
   useEffect(() => {
     if(lot) {
+      console.log(333)
+      console.log(lot)
       dispatch(singlePaintingAction(lot))
     } else {
       pages.map(p => {

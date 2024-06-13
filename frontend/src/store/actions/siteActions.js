@@ -67,6 +67,8 @@ export const paintingsAction = () => async dispatch => {
 
 export const singlePaintingAction = (slug) => async dispatch => {
 
+  console.log(slug)
+
   const config = {
     headers: {
       'Content-Type': 'application/json',
