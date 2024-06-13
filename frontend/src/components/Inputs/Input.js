@@ -39,7 +39,7 @@ const Input = ({type, name, required, placeholder, label, data, handler}) => {
       {/*</div>}*/}
       {type === 'phone' &&
       <input className="input-phone" name={name} ref={inputRef} type="text" placeholder="+7 (___) ___-__-__"
-             value={data} onChange={phoneHandler} autoComplete="off" />}
+             value={data} onChange={phoneHandler} autoComplete="none" />}
       {type === 'textarea' && <textarea name={name} value={data} onChange={e => handler(e)}/>}
     </div>
   );
