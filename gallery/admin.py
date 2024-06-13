@@ -74,7 +74,7 @@ class PaintingInline(admin.TabularInline):
 class PaintingRequestsAdmin(admin.ModelAdmin):
     list_display = ['requested_painting', 'name', 'phone', 'email']
     inlines = [
-        PaintingImageInline,
+        PaintingInline,
     ]
 
 
