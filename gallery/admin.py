@@ -44,6 +44,8 @@ class PaintingImageInline(admin.TabularInline):
 
 class PaintingAdmin(SortableAdminMixin, admin.ModelAdmin):
     list_display = ['my_order', 'is_active', 'name', 'artist', 'new', 'price']
+    list_display_links = ('name',)
+    list_editable = ('is_active', )
     inlines = [
         PaintingImageInline,
     ]
