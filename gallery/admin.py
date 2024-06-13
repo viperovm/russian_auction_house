@@ -57,7 +57,7 @@ def get_photo(obj):
 
 
 class PaintingRequestsAdmin(admin.ModelAdmin):
-    list_display = ['requested_painting', 'artist', 'name', 'phone', 'email']
+    list_display = ['requested_painting', 'name', 'phone', 'email']
 
 
 admin.site.register(PaintingImages)
