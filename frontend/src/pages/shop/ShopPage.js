@@ -19,6 +19,7 @@ const ShopPage = () => {
   console.log(page)
   console.log(lot)
   console.log(params)
+  console.log(painting)
 
 
   useEffect(() => {

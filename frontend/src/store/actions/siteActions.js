@@ -65,7 +65,7 @@ export const paintingsAction = () => async dispatch => {
   }
 }
 
-export const singlePaintingAction = ({slug}) => async dispatch => {
+export const singlePaintingAction = (slug) => async dispatch => {
 
   const config = {
     headers: {
