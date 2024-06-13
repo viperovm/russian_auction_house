@@ -5,7 +5,7 @@ from .serializers import PaintingSerializer, PaintingRequestsSerializer
 
 
 class PaintingViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = Painting.objects.all()
+    queryset = Painting.objects.all().exclude(is_active=False)
     serializer_class = PaintingSerializer
     permission_classes = [AllowAny]
     lookup_field = 'slug'
