@@ -49,7 +49,7 @@ const ShopPage = () => {
         dangerouslySetInnerHTML={{__html: page?.description}}
       />}
       {!lot && <Gallery shop={true}/>}
-      {lot && <ImageGallery items={painting.painting_gallery}/>}
+      {lot && <ImageGallery items={painting?.painting_gallery}/>}
 
       {/*<>*/}
       {/*  <h1>*/}
