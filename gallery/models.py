@@ -73,3 +73,6 @@ class PaintingRequests(models.Model):
         verbose_name = 'Запрос на приобретение'
         verbose_name_plural = 'Запросы на приобретение'
         ordering = ['id']
+
+    def __str__(self):
+        return self.requested_painting.name
