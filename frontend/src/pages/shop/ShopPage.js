@@ -29,11 +29,19 @@ const ShopPage = () => {
     }
   }, [lot, pages])
 
+  console.log(img)
+
   useEffect(() => {
-    setImg([])
+    const arr = []
     if(painting && Array.isArray(painting?.painting_gallery) && painting?.painting_gallery.length>0){
-      painting?.painting_gallery.map(i => setImg(prev => [...prev, i.image]))
+      painting?.painting_gallery.map(i => {
+        console.log(arr)
+        console.log(i)
+        console.log(i.image)
+        return [...arr, i.image]
+      })
     }
+    setImg(arr)
   }, [painting])
 
   const breadcrumbs = [
