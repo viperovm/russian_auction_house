@@ -6,6 +6,7 @@ import Gallery from "../../components/gallery/Gallery";
 import {singlePaintingAction} from "../../store/actions/siteActions";
 import ImageGallery from "react-image-gallery";
 import ShopItem from "../../components/shop/ShopItem";
+import ShopModal from "../../components/shop/ShopModal";
 
 const ShopPage = () => {
 
@@ -61,6 +62,7 @@ const ShopPage = () => {
 
   return (
     <MainLayout breadcrumbs={breadcrumbs}>
+      <ShopModal/>
 
       {!lot && page && <div
         dangerouslySetInnerHTML={{__html: page?.description}}
