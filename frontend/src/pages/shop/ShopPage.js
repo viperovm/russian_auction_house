@@ -4,6 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {useParams} from "react-router-dom";
 import Gallery from "../../components/gallery/Gallery";
 import {singlePaintingAction} from "../../store/actions/siteActions";
+import ImageGallery from "react-image-gallery";
 
 const ShopPage = () => {
 
@@ -48,6 +49,7 @@ const ShopPage = () => {
         dangerouslySetInnerHTML={{__html: page?.description}}
       />}
       {!lot && <Gallery shop={true}/>}
+      {lot && <ImageGallery items={painting.painting_gallery}/>}
 
       {/*<>*/}
       {/*  <h1>*/}
