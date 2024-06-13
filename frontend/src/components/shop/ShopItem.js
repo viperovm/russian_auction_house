@@ -1,4 +1,5 @@
 import React from 'react';
+import {getProperPrice} from "../../functions/price";
 
 const ShopItem = ({data}) => {
   return (
@@ -7,6 +8,10 @@ const ShopItem = ({data}) => {
       <h1>{data?.name}</h1>
       <div className="shop-item-short-description">
         {data?.short_description}
+      </div>
+      <div className="shop-item-price">
+        <div>{getProperPrice(data?.price)}</div>
+        <button className="submit-button">купить</button>
       </div>
     </div>
   );

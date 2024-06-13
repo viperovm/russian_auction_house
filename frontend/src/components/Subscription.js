@@ -65,7 +65,7 @@ const Subscription = () => {
           <form onSubmit={subscribeHandler}>
             <Input type="email" name="email" label="Email" placeholder="Введите Ваш email" required={true} data={data}
                    handler={changeHandler}/>
-            <input className="subscription-submit" type="submit"/>
+            <input className="submit-button" type="submit"/>
           </form>
         </div>
       </Modal>
