@@ -1,5 +1,6 @@
 import React, { useRef, useLayoutEffect, useState, useEffect } from 'react';
 import {useNavigate} from "react-router";
+import {getProperPrice} from "../../functions/price";
 
 const GalleryItem = ({img, mob, shop}) => {
 
@@ -32,7 +33,7 @@ const GalleryItem = ({img, mob, shop}) => {
       <img className="about_gallery_item" ref={targetRef} src={img?.painting_gallery[0]?.image} alt="" height={height}/>
       {shop && <div className="about_gallery_item_description">
         {(img?.name || img?.artist) && <div className="about_gallery_item_name">{img?.artist ? img?.artist + ' | ' : ''}{img?.name}</div>}
-        {img?.price && <div className="about_gallery_item_price">{img?.price} ₽</div>}
+        {img?.price && <div className="about_gallery_item_price">{getProperPrice(img?.price)} ₽</div>}
       </div>}
     </div>
 
