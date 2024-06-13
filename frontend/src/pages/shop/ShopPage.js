@@ -35,9 +35,11 @@ const ShopPage = () => {
     const arr = []
     if(painting && Array.isArray(painting?.painting_gallery) && painting?.painting_gallery.length>0){
       painting?.painting_gallery.map(i => {
-        console.log(arr)
+        console.log(img)
         console.log(i)
         console.log(i.image)
+        setImg(prev => [...prev, i.image])
+        console.log(img)
         return [...arr, i.image]
       })
     }
