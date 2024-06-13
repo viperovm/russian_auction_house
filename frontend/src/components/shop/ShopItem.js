@@ -7,8 +7,8 @@ const ShopItem = ({data}) => {
       <h2>{data?.artist}</h2>
       <h1>{data?.name}</h1>
       <p>{data?.short_description}</p>
-      <div className="shop-item-price">
-        <div>{getProperPrice(data?.price)}</div>
+      <div className="shop-item-price-wrapper">
+        <div className="shop-item-price">{getProperPrice(data?.price)}</div>
         <button className="buy-button">купить</button>
       </div>
     </div>
