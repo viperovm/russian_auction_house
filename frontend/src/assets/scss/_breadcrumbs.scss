@@ -13,7 +13,11 @@
 .breadcrumbs_item_link {
   color: #9F9F9F;
   display: block;
+
   &--disabled {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     color: #9F9F9F;
     pointer-events: none;
     font-weight: bold;
