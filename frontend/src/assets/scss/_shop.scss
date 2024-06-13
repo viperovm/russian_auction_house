@@ -3,7 +3,7 @@
 .shop-item-wrapper {
   display: flex;
   gap: 30px;
-  margin-top: 15px;
+  margin-top: 10px;
   @media #{$mobile-layout} {
     & > .shop-item-column {
       width: 100%;
@@ -32,7 +32,7 @@
 
 .shop-item-gallery-wrapper {
   width: 100%;
-  margin-top: 15px;
+  margin-top: 20px;
 }
 
 .shop-item-description-wrapper {
