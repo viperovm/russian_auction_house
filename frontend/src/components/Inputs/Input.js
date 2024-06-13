@@ -7,6 +7,20 @@ const Input = ({type, name, required, placeholder, label, data, handler}) => {
 
   const inputRef = useMask({mask: '+7 (___) ___-__-__', replacement: {_: /\d/}});
 
+  const phoneHandler = e => {
+    if(!data?.phone) {
+      if(e.target.value[0] !== '9') {
+        let d = {
+          target: {
+            name: 'phone',
+            value: ''
+          }
+        }
+        handler(d)
+      }
+    }
+  }
+
 
   return (
     <div className="input-wrapper">
@@ -23,7 +37,7 @@ const Input = ({type, name, required, placeholder, label, data, handler}) => {
       {/*</div>}*/}
       {type === 'phone' &&
       <input className="input-phone" name={name} ref={inputRef} type="text" placeholder="+7 (___) ___-__-__"
-             value={data} onChange={e => handler(e)}/>}
+             value={data} onChange={phoneHandler}/>}
       {type === 'textarea' && <textarea name={name} value={data} onChange={e => handler(e)}/>}
     </div>
   );
