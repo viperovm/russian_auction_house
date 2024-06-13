@@ -79,10 +79,8 @@ class PaintingRequestsAdmin(admin.ModelAdmin):
             return '-'
 
     def get_artist(self, obj):
-        if obj.requested_painting.artist and obj.requested_painting.slug:
-            return mark_safe(
-                f'<a href={obj.requested_painting.slug} target="_blank"><img src="{obj.requested_painting.painting_gallery[0].image}" width="45"></a>'
-            )
+        if obj.requested_painting.artist:
+            return obj.requested_painting.artist
         else:
             return '-'
 
