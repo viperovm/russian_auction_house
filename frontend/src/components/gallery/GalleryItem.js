@@ -31,7 +31,7 @@ const GalleryItem = ({img, mob, shop}) => {
     <div className="about_gallery_item_wrapper" onClick={clickHandler}>
       <img className="about_gallery_item" ref={targetRef} src={img?.painting_gallery[0]?.image} alt="" height={height}/>
       {shop && <div className="about_gallery_item_description">
-        {img?.name && <div className="about_gallery_item_name">{img?.name}</div>}
+        {(img?.name || img?.artist) && <div className="about_gallery_item_name">{img?.artist ? img?.artist + ' | ' : ''}{img?.name}</div>}
         {img?.price && <div className="about_gallery_item_price">{img?.price} ₽</div>}
       </div>}
     </div>
