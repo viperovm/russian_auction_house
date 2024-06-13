@@ -59,3 +59,4 @@ class PaintingImages(models.Model):
         super(PaintingImages, self).save()
         if not os.path.isfile(get_tmb_path(self)):
             create_crop_wout_tmb(self)
+

@@ -66,17 +66,22 @@ const ShopPage = () => {
         dangerouslySetInnerHTML={{__html: page?.description}}
       />}
       {!lot && <Gallery shop={true}/>}
-      {lot && <div className="shop-item-wrapper">
-        <div className="shop-item-column">
-          <div className="shop-item-gallery-wrapper">
-            <ImageGallery items={img}/>
+      {lot &&
+      <>
+        <div className="shop-item-wrapper">
+          <div className="shop-item-column">
+            <div className="shop-item-gallery-wrapper">
+              <ImageGallery items={img}/>
+            </div>
+          </div>
+          <div className="shop-item-column">
+            <ShopItem data={painting}/>
           </div>
         </div>
-        <div className="shop-item-column">
-          <ShopItem data={painting}/>
-        </div>
-
-      </div>
+        <div className="shop-item-description"
+          dangerouslySetInnerHTML={{__html: painting?.description}}
+        />
+      </>
       }
       {/*<>*/}
       {/*  <h1>*/}
