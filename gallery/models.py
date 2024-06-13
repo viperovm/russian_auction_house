@@ -16,7 +16,8 @@ def image_directory_path(instance, filename):
 
 
 class Painting(models.Model):
-    name = models.CharField(max_length=70, verbose_name='Название картины', blank=False, null=False)
+    name = models.CharField(max_length=170, verbose_name='Название картины', blank=False, null=False)
+    artist = models.CharField(max_length=255, verbose_name='Художник', blank=False, null=False)
     price = models.PositiveIntegerField(verbose_name='Цена', null=True, blank=True)
     new_price = models.PositiveIntegerField(verbose_name='Новая цена', null=True, blank=True)
     discount = models.PositiveIntegerField(verbose_name='Размер скидки', null=True, blank=True)
