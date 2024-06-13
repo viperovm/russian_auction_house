@@ -10,8 +10,11 @@ import Tg from "./icons/Tg";
 import Menu from "./menu/Menu";
 import {modalAction} from "../store/actions/siteActions";
 import AppealModal from "./appeal/AppealModal";
+import {useDispatch} from "react-redux";
 
 const Footer = () => {
+
+  const dispatch = useDispatch()
 
   const menu_items = [
     // {
