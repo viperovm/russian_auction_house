@@ -5,6 +5,7 @@ from django.template.defaultfilters import slugify
 from unidecode import unidecode
 from django.utils.text import slugify
 from services.utils import unique_slugify
+from django_ckeditor_5.fields import CKEditor5Field
 
 
 def image_directory_path(instance, filename):
@@ -22,7 +23,8 @@ class Painting(models.Model):
     new_price = models.PositiveIntegerField(verbose_name='Новая цена', null=True, blank=True)
     discount = models.PositiveIntegerField(verbose_name='Размер скидки', null=True, blank=True)
     new = models.BooleanField(verbose_name='Новинка', )
-    description = models.TextField(verbose_name='Описание картины', null=True, blank=True)
+    short_description = models.TextField(verbose_name='Короткое описание', null=True, blank=True)
+    description = CKEditor5Field(verbose_name='Описание картины', null=True, blank=True, config_name='default')
     slug = models.CharField(verbose_name='Url', blank=True)
     my_order = models.PositiveIntegerField(verbose_name='Сорт.', default=0, blank=False, null=False)
 
