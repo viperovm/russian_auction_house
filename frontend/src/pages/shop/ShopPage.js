@@ -35,15 +35,14 @@ const ShopPage = () => {
     const arr = []
     if(painting && Array.isArray(painting?.painting_gallery) && painting?.painting_gallery.length>0){
       painting?.painting_gallery.map(i => {
-        console.log(img)
         console.log(i)
         console.log(i.image)
-        setImg(prev => [...prev, i.image])
-        console.log(img)
+        arr.push(i.image)
+        console.log(arr)
         return [...arr, i.image]
       })
     }
-    setImg(arr)
+    console.log(arr)
   }, [painting])
 
   const breadcrumbs = [
