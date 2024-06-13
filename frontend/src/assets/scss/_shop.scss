@@ -3,36 +3,40 @@
 .shop-item-wrapper {
   display: flex;
   gap: 30px;
-  margin-top: 10px;
+  margin-top: 5px;
   @media #{$mobile-layout} {
-    & > .shop-item-column {
-      width: 100%;
-    }
+    flex-direction: column;
   }
   @media #{$tab-layout} {
-    & > .shop-item-column {
-      width: 100%;
-    }
+    flex-direction: column;
   }
   @media #{$desktop-layout} {
-    & > .shop-item-column {
-      width: calc(50% - 15px);
-    }
+    flex-direction: row;
   }
   @media #{$xl-layout} {
-    & > .shop-item-column {
-      width: calc(50% - 15px);
-    }
+    flex-direction: row;
   }
 }
 
 .shop-item-column {
   flex: 1;
+  @media #{$mobile-layout} {
+    width: 100%;
+  }
+  @media #{$tab-layout} {
+    width: 100%;
+  }
+  @media #{$desktop-layout} {
+    width: calc(50% - 15px);
+  }
+  @media #{$xl-layout} {
+    width: calc(50% - 15px);
+  }
 }
 
 .shop-item-gallery-wrapper {
   width: 100%;
-  margin-top: 20px;
+  margin-top: 25px;
 }
 
 .shop-item-description-wrapper {
