@@ -60,28 +60,33 @@ def get_photo(obj):
 
 class PaintingRequestsAdmin(admin.ModelAdmin):
     list_display = [
-        # 'get_photo',
-        'requested_painting',
+        'get_painting',
+        # 'requested_painting',
         'get_artist',
         'name',
         'phone',
         'email'
     ]
 
-    # def get_photo(self, obj):
-    #     if obj.requested_painting.painting_gallery[0].image:
-    #         return mark_safe(
-    #             f'<a href={obj.requested_painting.painting_gallery[0].image} target="_blank"><img src="{obj.requested_painting.painting_gallery[0].image}" width="45"></a>')
-    #     else:
-    #         return '-'
-
-    def get_artist(self, obj):
-        if obj.requested_painting.artist:
-            return obj.requested_painting.artist
+    def get_painting(self, obj):
+        if obj.requested_painting.name and obj.requested_painting.slug:
+            return mark_safe(
+                f'<a href={obj.requested_painting.slug} target="_blank">{obj.requested_painting.name}</a>'
+            )
+        elif obj.requested_painting.name:
+            return obj.requested_painting.name
         else:
             return '-'
 
-    # get_photo.short_description = 'Миниатюра'
+    def get_artist(self, obj):
+        if obj.requested_painting.artist and obj.requested_painting.slug:
+            return mark_safe(
+                f'<a href={obj.requested_painting.slug} target="_blank"><img src="{obj.requested_painting.painting_gallery[0].image}" width="45"></a>'
+            )
+        else:
+            return '-'
+
+    get_painting.short_description = 'Предмет запроса'
     get_artist.short_description = 'Автор'
 
 
