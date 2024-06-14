@@ -39,8 +39,8 @@ INSTALLED_APPS = [
     # My apps
     'contacts.apps.ContactsConfig',
     'gallery.apps.GalleryConfig',
-    'pages.apps.PagesConfig'
-
+    'pages.apps.PagesConfig',
+    'appeals.apps.AppealsConfig'
 ]
 
 # REST_FRAMEWORK = {
