@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {modalAction, appealAction} from "../../store/actions/siteActions";
+import {modalAction, appealAction, subscribeAction} from "../../store/actions/siteActions";
 import Modal from "../Modal";
 import Input from "../Inputs/Input";
 
@@ -20,6 +20,11 @@ const AppealModal = () => {
           setData(null)
         } else {
           console.error(result)
+        }
+      })
+    subscribeAction(data).then(r => {
+        if (r.status >= 300) {
+          console.error(r)
         }
       })
   }

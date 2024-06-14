@@ -11,13 +11,17 @@ from rest_framework import status
 def obtain_email(request):
 
     email = request.GET.get('email', '')
+    name = request.GET.get('name', '')
+    phone = request.GET.get('phone', '')
 
-    if email:
+    if email or name or phone:
         payload = {
             'format': 'json',
             'api_key': '67jq9emuna394a5oxghmj9io1j9rkgzrurfoifna',
             'list_ids': '3',
             'fields[email]': email,
+            'fields[Name]': name,
+            'fields[phone]': phone,
             'double_optin': '3',
             'overwrite': '0'
         }

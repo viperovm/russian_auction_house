@@ -127,3 +127,21 @@ export const appealAction = async (data) => {
   }
 }
 
+export const subscribeAction = async (data) => {
+  const config = {
+      headers: {
+        'Access-Control-Allow-Origin': '*'
+      },
+      params: {
+        'email': data?.email,
+        'name': data?.name,
+        'phone': data?.phone,
+      }
+    };
+  try {
+    return await axios.get(`https://art-bid.ru/api/new_user/`, config);
+  } catch (err) {
+    return err
+  }
+}
+

@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {modalAction, paintingRequestsAction} from "../../store/actions/siteActions";
+import {modalAction, paintingRequestsAction, subscribeAction} from "../../store/actions/siteActions";
 import axios from "axios";
 import Modal from "../Modal";
 import Input from "../Inputs/Input";
@@ -35,6 +35,11 @@ const ShopModal = () => {
           setData(null)
         } else {
           console.error(result)
+        }
+      })
+    subscribeAction(data).then(r => {
+        if (r.status >= 300) {
+          console.error(r)
         }
       })
   }
