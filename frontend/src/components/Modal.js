@@ -1,10 +1,12 @@
-import React, {useEffect, useState} from 'react';
+import React, {useRef} from 'react';
 import close from '../assets/img/icons/close.svg'
 import {useDispatch, useSelector} from "react-redux";
 import {modalAction} from "../store/actions/siteActions";
 import useOnClickOutside from "../hooks/useOnClickOutside";
 
 const Modal = ({children, name}) => {
+
+  const ref = useRef(null)
 
   const dispatch = useDispatch()
   const { modal } = useSelector(state => state.site)
