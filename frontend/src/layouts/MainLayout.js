@@ -4,11 +4,30 @@ import Footer from "../components/Footer";
 import {useLocation} from "react-router-dom";
 import Subscription from "../components/Subscription";
 import {useDispatch, useSelector} from "react-redux";
-import {pagesAction} from "../store/actions/siteActions";
+import {modalAction, pagesAction} from "../store/actions/siteActions";
 import Breadcrumbs from "../components/breadcrumbs/Breadcrumbs";
 import AppealModal from "../components/appeal/AppealModal";
 
 const MainLayout = ({children, breadcrumbs}) => {
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      let timestamp = null
+      let subscribed = null
+      if (localStorage.getItem('timestamp')) {
+        timestamp = JSON.parse(localStorage.getItem('timestamp'))
+      }
+      if (localStorage.getItem('subscribed')) {
+        subscribed = JSON.parse(localStorage.getItem('subscribed'))
+      }
+      if ((!subscribed && !timestamp) || (!subscribed && (timestamp && Date.now() - timestamp > 432000000))) {
+      // if ((!subscribed && !timestamp) || (!subscribed && (timestamp && Date.now() - timestamp > 432000000))) {
+        dispatch(modalAction('subscription'))
+        localStorage.setItem('timestamp', JSON.stringify(Date.now()));
+      }
+    }, 15000);
+    return () => clearTimeout(timeout);
+  }, [])
 
   const { pages } = useSelector(state => state.site)
 
