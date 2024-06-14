@@ -111,7 +111,7 @@ const Footer = () => {
             <a href="tel:+79772736062" className="contact_item contact_item_text">
               +7 977 273-60-62
             </a>
-            <div className="contact_item contact_item_text" onClick={() => {clickHandler('subscribe')}}>
+            <div className="contact_item contact_item_text hover-pink" onClick={() => {clickHandler('subscribe')}}>
               Подписаться на новости
             </div>
           </div>
