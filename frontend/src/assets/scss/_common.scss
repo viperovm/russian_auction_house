@@ -147,7 +147,9 @@ small {
   }
 }
 
-.hover-pink:hover {
+.hover-pink {
   transition: 0.5s;
-  color: $pink-primary;
+  :hover {
+    color: $pink-primary;
+  }
 }
