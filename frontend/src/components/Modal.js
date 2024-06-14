@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import close from '../assets/img/icons/close.svg'
 import {useDispatch, useSelector} from "react-redux";
 import {modalAction} from "../store/actions/siteActions";
+import useOnClickOutside from "../hooks/useOnClickOutside";
 
 const Modal = ({children, name}) => {
 
@@ -12,11 +13,13 @@ const Modal = ({children, name}) => {
     dispatch(modalAction(''))
   }
 
+  useOnClickOutside(ref, () => dispatch(modalAction('')))
+
   return (
     <>
       {name === modal &&
       <div className="modal-overlay">
-        <div className="modal-body">
+        <div ref={ref} className="modal-body">
           <img src={close} className="modal-close" onClick={closeHandler} alt="close button"/>
           {children}
         </div>
