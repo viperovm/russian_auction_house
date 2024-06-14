@@ -27,7 +27,7 @@ const Subscription = () => {
         dispatch(modalAction('subscription'))
         localStorage.setItem('timestamp', JSON.stringify(Date.now()));
       }
-    }, 2000);
+    }, 15000);
     return () => clearTimeout(timeout);
   }, [])
 
