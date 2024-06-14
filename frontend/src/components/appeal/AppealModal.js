@@ -36,7 +36,7 @@ const AppealModal = () => {
       <Modal name="appeal_modal">
         <div className="subscription-wrapper">
           <h1>Обратная связь</h1>
-          <p>Если у Вас остались вопросы, заполните форму и мы свяжемся с Вами</p>
+          <p>Если у Вас остались вопросы, заполните форму и мы свяжемся с Вами.</p>
           <form onSubmit={submitHandler}>
             <Input type="text" name="name" label="Имя" placeholder="Введите Ваше имя" required={true} data={data?.name}
                    handler={changeHandler}/>

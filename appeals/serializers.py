@@ -9,7 +9,6 @@ connection = mail.get_connection()
 
 
 class MessageSerializer(serializers.ModelSerializer):
-
     class Meta:
         model = Message
         fields = '__all__'
