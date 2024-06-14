@@ -128,6 +128,15 @@ export const appealAction = async (data) => {
 }
 
 export const subscribeAction = async (data) => {
+
+  const getPhone = () => {
+    if (data?.phone) {
+      return `+${data.phone.replace(/[^0-9]/g,"")}`
+    } else {
+      return ''
+    }
+  }
+
   const config = {
       headers: {
         'Access-Control-Allow-Origin': '*'
@@ -135,7 +144,7 @@ export const subscribeAction = async (data) => {
       params: {
         'email': data?.email,
         'name': data?.name,
-        'phone': data?.phone,
+        'phone': getPhone(),
       }
     };
   try {
