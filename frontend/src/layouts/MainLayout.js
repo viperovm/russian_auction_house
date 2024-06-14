@@ -10,6 +10,8 @@ import AppealModal from "../components/appeal/AppealModal";
 
 const MainLayout = ({children, breadcrumbs}) => {
 
+  const dispatch = useDispatch()
+
   useEffect(() => {
     const timeout = setTimeout(() => {
       let timestamp = null
@@ -30,8 +32,6 @@ const MainLayout = ({children, breadcrumbs}) => {
   }, [])
 
   const { pages } = useSelector(state => state.site)
-
-  const dispatch = useDispatch()
 
   useEffect(() => {
     if(pages.length === 0){
