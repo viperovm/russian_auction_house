@@ -149,7 +149,7 @@ small {
 
 .hover-pink {
   transition: 0.5s;
-  :hover {
+  &:hover {
     color: $pink-primary;
   }
 }
