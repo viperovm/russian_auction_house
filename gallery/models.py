@@ -16,6 +16,14 @@ def image_directory_path(instance, filename):
     return '{0}/{1}{2}'.format(folder, slugify(unidecode(name)), '.jpg')
 
 
+def banner_directory_path(instance, filename):
+    name, extension = os.path.splitext(filename)
+    folder = 'banners'
+    if len(folder) > 75:
+        folder = folder[:75]
+    return '{0}/{1}{2}'.format(folder, slugify(unidecode(name)), '.jpg')
+
+
 class Painting(models.Model):
     name = models.CharField(max_length=170, verbose_name='Название лота', blank=False, null=False)
     is_active = models.BooleanField(verbose_name='Активный лот', )
@@ -77,3 +85,34 @@ class PaintingRequests(models.Model):
 
     def __str__(self):
         return self.requested_painting.name
+
+
+class Banners(models.Model):
+
+    CHOICES = (
+        ('left', 'Слева'),
+        ('right', 'Справа'),
+    )
+
+    title = models.CharField(max_length=255, verbose_name='Заголовок', blank=False, null=False)
+    subtitle = models.CharField(max_length=255, verbose_name='Подзаголовок', blank=True, null=True)
+    text = models.TextField(max_length=500, verbose_name='Текст', blank=True, null=True)
+    text_position = models.CharField(verbose_name='Расположение текста', choices=CHOICES, default='right', blank=False)
+    image = models.ImageField(verbose_name='Изображение', blank=False, null=False, max_length=255, upload_to=banner_directory_path)
+    is_active = models.BooleanField(verbose_name='Активный баннер', default=True)
+    link_1_name = models.CharField(max_length=255, verbose_name='Название ссылки 1', blank=True, null=True)
+    link_1_url = models.CharField(max_length=255, verbose_name='Ссылка 1', blank=True, null=True)
+    link_2_name = models.CharField(max_length=255, verbose_name='Название ссылки 2', blank=True, null=True)
+    link_2_url = models.CharField(max_length=255, verbose_name='Ссылка 2', blank=True, null=True)
+
+    class Meta:
+        verbose_name = 'Баннер'
+        verbose_name_plural = 'Баннеры'
+
+    def __str__(self):
+        return self.title
+
+    def save(self, *args, **kwargs):
+        super(Banners, self).save()
+        if not os.path.isfile(get_tmb_path(self)):
+            create_crop_wout_tmb(self, crop_width=1190, crop_height=595)
