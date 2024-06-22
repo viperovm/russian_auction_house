@@ -11,7 +11,7 @@ const HomePage = () => {
 
   useEffect(() => {
     pages.map(p => {
-      if(p.slug === 'about') {
+      if(p.slug === '/') {
         setPage(p)
       }
     })
