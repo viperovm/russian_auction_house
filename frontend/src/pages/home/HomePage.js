@@ -22,7 +22,6 @@ const HomePage = () => {
       {page && <div
         dangerouslySetInnerHTML={{__html: page?.description}}
       />}
-      {<Gallery/>}
     </MainLayout>
   );
 };
