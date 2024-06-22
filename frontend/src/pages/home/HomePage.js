@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {useSelector} from "react-redux";
 import Gallery from "../../components/gallery/Gallery";
 import MainLayout from "../../layouts/MainLayout";
+import Banner from "../../components/banner/Banner";
 
 const HomePage = () => {
 
@@ -19,6 +20,7 @@ const HomePage = () => {
 
   return (
     <MainLayout page={page}>
+      <Banner/>
       {page && <div
         dangerouslySetInnerHTML={{__html: page?.description}}
       />}
