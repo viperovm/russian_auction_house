@@ -1,6 +1,8 @@
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom"
 import AboutPage from "../pages/about/AboutPage"
 import ShopPage from "../pages/shop/ShopPage"
+import HomePage from "../pages/home/HomePage";
+import React from "react";
 
 const MasterRoute = () => {
 
@@ -9,7 +11,7 @@ const MasterRoute = () => {
       <Routes>
         <Route
           path={`/`}
-          element={<AboutPage />}
+          element={<HomePage />}
         />
         <Route
           path={`/about/:doc?`}
