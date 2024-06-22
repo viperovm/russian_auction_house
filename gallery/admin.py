@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.utils.safestring import mark_safe
 from adminsortable2.admin import SortableAdminMixin
-from .models import PaintingImages, Painting, PaintingRequests
+from .models import PaintingImages, Painting, PaintingRequests, Banners
 
 
 class PaintingImageAdmin(admin.ModelAdmin):
@@ -89,6 +89,14 @@ class PaintingRequestsAdmin(admin.ModelAdmin):
     get_artist.short_description = 'Автор'
 
 
+class BannersAdmin(admin.ModelAdmin):
+    model = Banners
+    list_display = ['title', 'is_active']
+    list_display_links = ('title',)
+    list_editable = ('is_active', )
+
+
 admin.site.register(PaintingImages)
 admin.site.register(Painting, PaintingAdmin)
 admin.site.register(PaintingRequests, PaintingRequestsAdmin)
+admin.site.register(Banners, BannersAdmin)

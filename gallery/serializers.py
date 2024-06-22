@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Painting, PaintingImages, PaintingRequests
+from .models import Painting, PaintingImages, PaintingRequests, Banners
 from django.core.mail import send_mail
 import datetime
 
@@ -11,6 +11,12 @@ connection = mail.get_connection()
 class PaintingImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = PaintingImages
+        fields = '__all__'
+
+
+class BannersSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Banners
         fields = '__all__'
 
 

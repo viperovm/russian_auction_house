@@ -19,41 +19,6 @@ const Gallery = ({shop=false}) => {
     }
   },[paintings])
 
-  const gal = [
-    {
-      id: 1,
-      img: img1,
-    },
-    {
-      id: 2,
-      img: img2,
-    },
-    {
-      id: 3,
-      img: img3,
-    },
-    {
-      id: 4,
-      img: img4,
-    },
-    {
-      id: 5,
-      img: img1,
-    },
-    {
-      id: 6,
-      img: img2,
-    },
-    {
-      id: 7,
-      img: img3,
-    },
-    {
-      id: 8,
-      img: img4,
-    },
-  ]
-
   const targetRef = useRef();
   const [width, setWidth] = useState(0);
   const [mob, setMob] = useState(false);

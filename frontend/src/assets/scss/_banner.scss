@@ -1,0 +1,119 @@
+@import "variables";
+
+.home-banner {
+  width: 100%;
+  height: 595px;
+  display: flex;
+
+  &.left {
+    justify-content: start;
+    & > .home-banner-info {
+      @media #{$mobile-layout} {
+        align-items: center;
+      }
+      @media #{$tab-layout} {
+        align-items: center;
+      }
+      @media #{$desktop-layout} {
+        align-items: center;
+      }
+      @media #{$xl-layout} {
+        align-items: start;
+      }
+    }
+  }
+  &.right {
+    justify-content: end;
+    & > .home-banner-info {
+      @media #{$mobile-layout} {
+        align-items: center;
+      }
+      @media #{$tab-layout} {
+        align-items: center;
+      }
+      @media #{$desktop-layout} {
+        align-items: center;
+      }
+      @media #{$xl-layout} {
+        align-items: end;
+      }
+    }
+  }
+}
+
+.home-banner-info {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  background: linear-gradient(
+                  to right,
+                  rgba(0, 0, 0, 0) 0%,
+                  rgba(0, 0, 0, 0.25) 25% 75%,
+                  rgba(0, 0, 0, 0) 100%
+  );
+}
+
+h2 {
+
+}
+
+.home-banner-title {
+  font-family: $mont;
+  margin-top: 0;
+  font-weight: 900;
+  color: $blue-primary;
+  @media #{$mobile-layout} {
+    font-size: 21px;
+  }
+  @media #{$tab-layout} {
+    font-size: 23px;
+  }
+  @media #{$desktop-layout} {
+    font-size: 27px;
+  }
+  @media #{$xl-layout} {
+    font-size: 27px;
+  }
+}
+
+.home-banner-subtitle {
+  font-family: $tinos;
+  font-weight: 700;
+  color: $white;
+  @media #{$mobile-layout} {
+    font-size: 20px;
+  }
+  @media #{$tab-layout} {
+    font-size: 20px;
+  }
+  @media #{$desktop-layout} {
+    font-size: 23px;
+  }
+  @media #{$xl-layout} {
+    font-size: 23px;
+  }
+}
+
+.home-banner-text {
+  font-family: $tinos;
+  font-weight: 400;
+  line-height: 140%;
+  color: $white;
+  @media #{$mobile-layout} {
+    font-size: 17px;
+  }
+  @media #{$tab-layout} {
+    font-size: 17px;
+  }
+  @media #{$desktop-layout} {
+    font-size: 20px;
+  }
+  @media #{$xl-layout} {
+    font-size: 20px;
+  }
+}
+
+.home-banner-link {
+
+}
+

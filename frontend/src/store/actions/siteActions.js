@@ -41,6 +41,30 @@ export const pagesAction = () => async dispatch => {
   }
 }
 
+export const bannerAction = () => async dispatch => {
+
+  const config = {
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+    }
+  };
+
+  try {
+    const res = await axios.get(`https://art-bid.ru/api/banner/`, config);
+
+    dispatch({
+      type: t.GET_BANNER_SUCCESS,
+      payload: res.data[0],
+    })
+  } catch (err) {
+
+    dispatch({
+      type: t.GET_BANNER_FAIL
+    })
+  }
+}
+
 export const paintingsAction = () => async dispatch => {
 
   const config = {

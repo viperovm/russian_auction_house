@@ -4,6 +4,7 @@ const initialState = {
   active_action: '',
   modal: '',
   pages: [],
+  banner: null,
   paintings: [],
   painting: null,
 }
@@ -38,6 +39,20 @@ const siteReducer = (state = initialState, action) => {
       return {
         ...state,
         pages: [],
+      }
+
+    case t.GET_BANNER_SUCCESS:
+
+      return {
+        ...state,
+        banner: payload,
+      }
+
+    case t.GET_BANNER_FAIL:
+
+      return {
+        ...state,
+        banner: null,
       }
 
     case t.GET_PAINTINGS_SUCCESS:
