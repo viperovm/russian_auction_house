@@ -6,9 +6,15 @@
   display: flex;
   margin-bottom: 60px;
   background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
 
   &.left {
     justify-content: start;
+
     & > .home-banner-info {
       @media #{$mobile-layout} {
         align-items: center;
@@ -24,8 +30,10 @@
       }
     }
   }
+
   &.right {
     justify-content: end;
+
     & > .home-banner-info {
       @media #{$mobile-layout} {
         align-items: center;
@@ -128,6 +136,7 @@
 
 .home-banner-link {
   color: $blue-primary;
+
   &:hover {
     color: $pink-primary;
   }
