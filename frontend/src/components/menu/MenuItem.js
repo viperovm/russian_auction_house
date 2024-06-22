@@ -14,11 +14,13 @@ const MenuItem = ({data}) => {
     }
   }
 
+  console.log(window.location.pathname)
+
   return (
     <Link
       onClick={clickHandler}
       className={`menu_item${(window.location.pathname.includes(data.slug)) ? ' active' : ''} `}
-      to={`/${data.slug}`}
+      to={`${data.slug === '/' ? '/' : `/${data.slug}`}`}
     >
       {data.name}
     </Link>
