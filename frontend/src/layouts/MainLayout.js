@@ -47,9 +47,6 @@ const MainLayout = ({children, breadcrumbs, page}) => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
-  console.log(1)
-  console.log(page)
-
   return (
     <>
       {(page?.meta_title || page?.meta_description || page?.meta_keywords) &&
