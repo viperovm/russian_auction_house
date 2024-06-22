@@ -80,18 +80,18 @@
   font-family: $mont;
   margin-top: 0;
   font-weight: 900;
-  color: $blue-primary;
+  color: $white;
   @media #{$mobile-layout} {
-    font-size: 21px;
-  }
-  @media #{$tab-layout} {
     font-size: 23px;
   }
-  @media #{$desktop-layout} {
+  @media #{$tab-layout} {
     font-size: 27px;
   }
+  @media #{$desktop-layout} {
+    font-size: 30px;
+  }
   @media #{$xl-layout} {
-    font-size: 27px;
+    font-size: 30px;
   }
 }
 
@@ -101,16 +101,16 @@
   font-weight: 700;
   color: $white;
   @media #{$mobile-layout} {
-    font-size: 20px;
+    font-size: 23px;
   }
   @media #{$tab-layout} {
-    font-size: 20px;
+    font-size: 23px;
   }
   @media #{$desktop-layout} {
-    font-size: 23px;
+    font-size: 26px;
   }
   @media #{$xl-layout} {
-    font-size: 23px;
+    font-size: 26px;
   }
 }
 
@@ -121,21 +121,33 @@
   line-height: 140%;
   color: $white;
   @media #{$mobile-layout} {
-    font-size: 17px;
+    font-size: 20px;
   }
   @media #{$tab-layout} {
-    font-size: 17px;
+    font-size: 20px;
   }
   @media #{$desktop-layout} {
-    font-size: 20px;
+    font-size: 23px;
   }
   @media #{$xl-layout} {
-    font-size: 20px;
+    font-size: 23px;
   }
 }
 
 .home-banner-link {
-  color: $blue-primary;
+  color: $white;
+  @media #{$mobile-layout} {
+    font-size: 23px;
+  }
+  @media #{$tab-layout} {
+    font-size: 23px;
+  }
+  @media #{$desktop-layout} {
+    font-size: 26px;
+  }
+  @media #{$xl-layout} {
+    font-size: 26px;
+  }
 
   &:hover {
     color: $pink-primary;
