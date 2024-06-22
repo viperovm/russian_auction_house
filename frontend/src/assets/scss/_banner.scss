@@ -17,18 +17,22 @@
 
     & > .home-banner-info {
       @media #{$mobile-layout} {
+        text-align: center;
         align-items: center;
         background-color: rgba(0, 0, 0, 0.45);
       }
       @media #{$tab-layout} {
+        text-align: center;
         align-items: center;
         background-color: rgba(0, 0, 0, 0.45);
       }
       @media #{$desktop-layout} {
+        text-align: center;
         align-items: center;
         background-color: rgba(0, 0, 0, 0.45);
       }
       @media #{$xl-layout} {
+        text-align: left;
         align-items: start;
         background: linear-gradient(
                         to right,
@@ -45,18 +49,22 @@
 
     & > .home-banner-info {
       @media #{$mobile-layout} {
+        text-align: center;
         align-items: center;
         background-color: rgba(0, 0, 0, 0.45);
       }
       @media #{$tab-layout} {
+        text-align: center;
         align-items: center;
         background-color: rgba(0, 0, 0, 0.45);
       }
       @media #{$desktop-layout} {
+        text-align: center;
         align-items: center;
         background-color: rgba(0, 0, 0, 0.45);
       }
       @media #{$xl-layout} {
+        text-align: right;
         align-items: end;
         background: linear-gradient(
                         to right,
