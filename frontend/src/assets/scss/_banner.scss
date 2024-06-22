@@ -18,37 +18,22 @@
     & > .home-banner-info {
       @media #{$mobile-layout} {
         align-items: center;
-        background: linear-gradient(
-                        to right,
-                        rgba(0, 0, 0, 0) 0%,
-                        rgba(0, 0, 0, 0.35) 10% 90%,
-                        rgba(0, 0, 0, 0) 100%
-        );
+        background-color: rgba(0, 0, 0, 0.45);
       }
       @media #{$tab-layout} {
         align-items: center;
-        background: linear-gradient(
-                        to right,
-                        rgba(0, 0, 0, 0) 0%,
-                        rgba(0, 0, 0, 0.35) 10% 90%,
-                        rgba(0, 0, 0, 0) 100%
-        );
+        background-color: rgba(0, 0, 0, 0.45);
       }
       @media #{$desktop-layout} {
         align-items: center;
-        background: linear-gradient(
-                        to right,
-                        rgba(0, 0, 0, 0) 0%,
-                        rgba(0, 0, 0, 0.35) 10% 90%,
-                        rgba(0, 0, 0, 0) 100%
-        );
+        background-color: rgba(0, 0, 0, 0.45);
       }
       @media #{$xl-layout} {
         align-items: start;
         background: linear-gradient(
                         to right,
                         rgba(0, 0, 0, 0.1) 0%,
-                        rgba(0, 0, 0, 0.35) 10% 90%,
+                        rgba(0, 0, 0, 0.45) 10% 90%,
                         rgba(0, 0, 0, 0) 100%
         );
       }
@@ -61,37 +46,22 @@
     & > .home-banner-info {
       @media #{$mobile-layout} {
         align-items: center;
-        background: linear-gradient(
-                        to right,
-                        rgba(0, 0, 0, 0) 0%,
-                        rgba(0, 0, 0, 0.35) 10% 90%,
-                        rgba(0, 0, 0, 0) 100%
-        );
+        background-color: rgba(0, 0, 0, 0.45);
       }
       @media #{$tab-layout} {
         align-items: center;
-        background: linear-gradient(
-                        to right,
-                        rgba(0, 0, 0, 0) 0%,
-                        rgba(0, 0, 0, 0.35) 10% 90%,
-                        rgba(0, 0, 0, 0) 100%
-        );
+        background-color: rgba(0, 0, 0, 0.45);
       }
       @media #{$desktop-layout} {
         align-items: center;
-        background: linear-gradient(
-                        to right,
-                        rgba(0, 0, 0, 0) 0%,
-                        rgba(0, 0, 0, 0.35) 10% 90%,
-                        rgba(0, 0, 0, 0) 100%
-        );
+        background-color: rgba(0, 0, 0, 0.45);
       }
       @media #{$xl-layout} {
         align-items: end;
         background: linear-gradient(
                         to right,
                         rgba(0, 0, 0, 0) 0%,
-                        rgba(0, 0, 0, 0.35) 10% 90%,
+                        rgba(0, 0, 0, 0.45) 10% 90%,
                         rgba(0, 0, 0, 0.1) 100%
         );
       }
