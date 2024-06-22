@@ -4,9 +4,9 @@ import {Link} from "react-router-dom"
 const Breadcrumbs = ({items}) => {
   return (
     <>
-      {items.length ? (
+      {items?.length ? (
         <>
-          {items.map((item, index) => (
+          {items?.map((item, index) => (
             <>
               <Link
                 key={index}
