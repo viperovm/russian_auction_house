@@ -33,7 +33,7 @@
       }
       @media #{$xl-layout} {
         text-align: left;
-        align-items: start;
+        align-items: center;
         background: linear-gradient(
                         to right,
                         rgba(0, 0, 0, 0.1) 0%,
@@ -65,7 +65,7 @@
       }
       @media #{$xl-layout} {
         text-align: left;
-        align-items: end;
+        align-items: center;
         background: linear-gradient(
                         to right,
                         rgba(0, 0, 0, 0) 0%,
