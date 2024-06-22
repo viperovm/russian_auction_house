@@ -8,8 +8,9 @@ import {modalAction, pagesAction} from "../store/actions/siteActions";
 import Breadcrumbs from "../components/breadcrumbs/Breadcrumbs";
 import AppealModal from "../components/appeal/AppealModal";
 import ShopModal from "../components/shop/ShopModal";
+import {Helmet} from "react-helmet";
 
-const MainLayout = ({children, breadcrumbs}) => {
+const MainLayout = ({children, breadcrumbs, page}) => {
 
   const dispatch = useDispatch()
 
@@ -48,6 +49,12 @@ const MainLayout = ({children, breadcrumbs}) => {
 
   return (
     <>
+      {(page?.meta_title || page?.meta_description || page?.meta_keywords) &&
+      <Helmet>
+        {page?.meta_title && <title>{page?.meta_title}</title>}
+        {page?.meta_description && <meta name="description" content={page?.meta_description} />}
+        {page?.meta_keywords && <meta name="keywords" content={page?.meta_keywords} />}
+      </Helmet>}
       <Subscription/>
       <AppealModal/>
       <ShopModal/>

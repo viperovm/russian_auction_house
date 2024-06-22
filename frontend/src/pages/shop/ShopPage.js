@@ -6,6 +6,7 @@ import Gallery from "../../components/gallery/Gallery";
 import {singlePaintingAction} from "../../store/actions/siteActions";
 import ImageGallery from "react-image-gallery";
 import ShopItem from "../../components/shop/ShopItem";
+import {Helmet} from "react-helmet";
 
 const ShopPage = () => {
 
@@ -29,8 +30,6 @@ const ShopPage = () => {
       })
     }
   }, [lot, pages])
-
-  console.log(img)
 
   useEffect(() => {
     if (painting && Array.isArray(painting?.painting_gallery) && painting?.painting_gallery?.length) {
@@ -57,10 +56,8 @@ const ShopPage = () => {
     },
   ]
 
-  console.log(painting)
-
   return (
-    <MainLayout breadcrumbs={breadcrumbs}>
+    <MainLayout breadcrumbs={breadcrumbs} page={page}>
 
       {!lot && page && <div
         dangerouslySetInnerHTML={{__html: page?.description}}
