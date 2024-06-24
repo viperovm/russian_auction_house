@@ -1,8 +1,4 @@
 import React, {useRef, useLayoutEffect, useState, useEffect} from 'react'
-import img1 from '../../assets/img/aboutGallery/1.jpg'
-import img2 from '../../assets/img/aboutGallery/2.jpg'
-import img3 from '../../assets/img/aboutGallery/3.jpg'
-import img4 from '../../assets/img/aboutGallery/4.jpg'
 import GalleryItem from "./GalleryItem";
 import {useDispatch, useSelector} from "react-redux";
 import {paintingsAction} from "../../store/actions/siteActions";

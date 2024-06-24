@@ -1,0 +1,16 @@
+INSERT INTO public.gallery_paintingimages (id, image, image_painting_id) VALUES (1, 'painting_images/image-9.jpg', 5);
+INSERT INTO public.gallery_paintingimages (id, image, image_painting_id) VALUES (2, 'painting_images/image-10.jpg', 2);
+INSERT INTO public.gallery_paintingimages (id, image, image_painting_id) VALUES (3, 'painting_images/image-11.jpg', 3);
+INSERT INTO public.gallery_paintingimages (id, image, image_painting_id) VALUES (4, 'painting_images/image-12.jpg', 4);
+INSERT INTO public.gallery_paintingimages (id, image, image_painting_id) VALUES (5, 'painting_images/image-13.jpg', 1);
+INSERT INTO public.gallery_paintingimages (id, image, image_painting_id) VALUES (6, 'painting_images/image-14.jpg', 6);
+INSERT INTO public.gallery_paintingimages (id, image, image_painting_id) VALUES (7, 'painting_images/image-8.jpg', 7);
+INSERT INTO public.gallery_paintingimages (id, image, image_painting_id) VALUES (8, 'painting_images/image-7.jpg', 8);
+INSERT INTO public.gallery_paintingimages (id, image, image_painting_id) VALUES (9, 'painting_images/image-4.jpg', 9);
+INSERT INTO public.gallery_paintingimages (id, image, image_painting_id) VALUES (10, 'painting_images/image-2.jpg', 10);
+INSERT INTO public.gallery_paintingimages (id, image, image_painting_id) VALUES (11, 'painting_images/image-9_WcvtpaQ.jpg', 1);
+INSERT INTO public.gallery_paintingimages (id, image, image_painting_id) VALUES (12, 'painting_images/image-8_z9mz9Hf.jpg', 1);
+INSERT INTO public.gallery_paintingimages (id, image, image_painting_id) VALUES (13, 'painting_images/image-2_09UQ3Vj.jpg', 1);
+INSERT INTO public.gallery_paintingimages (id, image, image_painting_id) VALUES (14, 'painting_images/image-4_5epUWNw.jpg', 1);
+INSERT INTO public.gallery_paintingimages (id, image, image_painting_id) VALUES (15, 'painting_images/image-7_Le22eML.jpg', 1);
+INSERT INTO public.gallery_paintingimages (id, image, image_painting_id) VALUES (16, 'painting_images/image-10_RJOseNm.jpg', 1);

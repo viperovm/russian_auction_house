@@ -13,8 +13,6 @@ const ShopModal = () => {
 
   const [data, setData] = useState(null)
 
-  console.log(data)
-
   useEffect(() => {
     if(painting) {
       setData({
