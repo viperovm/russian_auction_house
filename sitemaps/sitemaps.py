@@ -4,6 +4,17 @@ from pages.models import Page
 from gallery.models import Painting
 
 
+class HomeViewSitemap(Sitemap):
+    changefreq = 'monthly'
+    priority = 0.9
+
+    def items(self):
+        return Page.objects.filter(slug='/')
+
+    def location(self, item):
+        return reverse(item)
+
+
 class StaticViewSitemap(Sitemap):
     changefreq = 'monthly'
     priority = 0.9
