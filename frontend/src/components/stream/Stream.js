@@ -25,6 +25,9 @@ const Stream = () => {
   }, [targetRef]);
 
   console.log(width)
+  console.log(targetRef)
+  console.log(targetRef.current)
+  console.log(targetRef.current.offsetWidth)
 
   return (
     <>
