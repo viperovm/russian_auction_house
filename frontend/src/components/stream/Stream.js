@@ -1,19 +1,10 @@
 import React, {useRef, useLayoutEffect, useState, useEffect} from 'react'
-import {useDispatch, useSelector} from "react-redux";
-import {streamAction} from "../../store/actions/siteActions";
+import {useSelector} from "react-redux";
 import Iframe from 'react-iframe'
 
 const Stream = () => {
 
-  const dispatch = useDispatch()
-
   const { stream } = useSelector(state => state.site)
-
-  useEffect(() => {
-    if(!stream){
-      dispatch(streamAction())
-    }
-  },[stream])
 
   const observedDiv = useRef();
   const [width, setWidth] = useState(0);
@@ -32,11 +23,6 @@ const Stream = () => {
       resizeObserver.disconnect();
     }
   }, [observedDiv.current])
-
-  console.log(width)
-  console.log(observedDiv)
-  console.log(observedDiv?.current)
-  console.log(observedDiv?.current?.offsetWidth)
 
   return (
     <>

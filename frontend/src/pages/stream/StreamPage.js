@@ -6,6 +6,7 @@ import {useParams} from "react-router-dom";
 import Stream from "../../components/stream/Stream";
 import {login, checkAuthenticated} from "../../store/actions/authActions";
 import Input from "../../components/Inputs/Input";
+import {streamAction} from "../../store/actions/siteActions";
 
 const StreamPage = () => {
 
@@ -45,6 +46,12 @@ const StreamPage = () => {
       }
     })
   }, [pages])
+
+  useEffect(() => {
+    if(!stream){
+      dispatch(streamAction())
+    }
+  },[stream])
 
   const breadcrumbs = [
     {
