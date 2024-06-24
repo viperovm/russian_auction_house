@@ -33,8 +33,10 @@ const StreamPage = () => {
   }
 
   useEffect(() => {
-    dispatch(checkAuthenticated())
-  }, [])
+    if(!user) {
+      dispatch(checkAuthenticated())
+    }
+  }, [user])
 
   useEffect(() => {
     pages.map(p => {
