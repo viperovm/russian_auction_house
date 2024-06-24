@@ -22,6 +22,7 @@ urlpatterns = [
     path('api/', include('pages.urls')),
     path('api/', include('gallery.urls')),
     path('api/', include('appeals.urls')),
+    path('api/', include('stream.urls')),
     path('ckeditor5/', include('django_ckeditor_5.urls')),
 ]
 

@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'contacts.apps.ContactsConfig',
     'gallery.apps.GalleryConfig',
     'pages.apps.PagesConfig',
-    'appeals.apps.AppealsConfig'
+    'appeals.apps.AppealsConfig',
+    'stream.apps.StreamConfig'
 ]
 
 # REST_FRAMEWORK = {
