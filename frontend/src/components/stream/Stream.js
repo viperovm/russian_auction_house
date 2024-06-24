@@ -23,14 +23,6 @@ const Stream = () => {
     }
   }, []);
 
-  useEffect(() => {
-    if(width < 992) {
-      setMob(true)
-    } else {
-      setMob(false)
-    }
-  }, [width])
-
   return (
     <div ref={targetRef} className="stream-wrapper">
       <iframe
