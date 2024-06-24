@@ -24,6 +24,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sitemaps',
     'debug_toolbar',
     'adminsortable2',
     "django_autoslug",
@@ -40,7 +41,8 @@ INSTALLED_APPS = [
     'contacts.apps.ContactsConfig',
     'gallery.apps.GalleryConfig',
     'pages.apps.PagesConfig',
-    'appeals.apps.AppealsConfig'
+    'appeals.apps.AppealsConfig',
+    'sitemaps.apps.SitemapsConfig',
 ]
 
 # REST_FRAMEWORK = {

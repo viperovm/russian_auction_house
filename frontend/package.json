@@ -17,7 +17,7 @@
     "react-redux": "^9.0.2",
     "react-router": "^6.23.1",
     "react-router-dom": "^6.20.1",
-    "react-scripts": "^3.0.1",
+    "react-scripts": "^5.0.1",
     "redux": "^5.0.0",
     "redux-thunk": "^3.1.0",
     "sass": "^1.69.5",
@@ -25,7 +25,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && bash deploy_script",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

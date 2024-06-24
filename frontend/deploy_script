@@ -1,0 +1,16 @@
+#!/bin/bash
+
+local=/Users/MacBookProSlava/Projects/russian_auction_house/frontend/build
+prod=/viperovm/russian_auction_house/frontend/build
+
+expect <<EOF
+spawn sftp viperovm@79.174.92.182
+expect "sftp>"
+send "put -r $local prod"
+# shellcheck disable=SC1012
+send \n
+expect "sftp>"
+send "exit"
+EOF
+
+echo -e "\n\033[1;32mDeploy completed \033[1;39m"
