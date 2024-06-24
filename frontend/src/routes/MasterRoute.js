@@ -7,20 +7,23 @@ import React from "react";
 const MasterRoute = () => {
 
   return (
-    <Routes>
-      <Route
-        path={`/`}
-        element={<HomePage/>}
-      />
-      <Route
-        path={`/about/:doc?`}
-        element={<AboutPage/>}
-      />
-      <Route
-        path={`/shop/:lot?`}
-        element={<ShopPage/>}
-      />
-    </Routes>
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path={`/`}
+          element={<HomePage/>}
+        />
+        <Route
+          path={`/about/:doc?`}
+          element={<AboutPage/>}
+        />
+        <Route
+          path={`/shop/:lot?`}
+          element={<ShopPage/>}
+        />
+      </Routes>
+    </BrowserRouter>
+
   )
 }
 export default MasterRoute

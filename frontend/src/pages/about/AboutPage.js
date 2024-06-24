@@ -3,7 +3,6 @@ import MainLayout from "../../layouts/MainLayout";
 import Gallery from "../../components/gallery/Gallery";
 import {useSelector} from "react-redux";
 import { useParams } from "react-router-dom";
-import {Helmet} from "react-helmet";
 
 const AboutPage = () => {
 
