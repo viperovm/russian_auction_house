@@ -29,7 +29,7 @@ const Stream = () => {
       {stream &&
       <div ref={targetRef} className="stream-wrapper">
 
-        <Iframe url={`https://vk.com/video_ext.php?oid=${stream}`}
+        <Iframe url={`https://vk.com/video_ext.php?oid=${stream.url}`}
         width={width ? width : '1190'}
         height={width ? width/1.8 : '661'}
         id=""
