@@ -31,6 +31,8 @@ const StreamPage = () => {
       })
   }
 
+  console.log(data)
+
   const changeHandler = (e) => {
     setData({
       ...data,
