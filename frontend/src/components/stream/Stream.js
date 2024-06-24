@@ -15,24 +15,33 @@ const Stream = () => {
     }
   },[stream])
 
-  const targetRef = useRef();
+  const observedDiv = useRef();
   const [width, setWidth] = useState(0);
 
-  useLayoutEffect(() => {
-    if (targetRef.current) {
-      setWidth(targetRef.current.offsetWidth);
+  useEffect(() => {
+    if (!observedDiv.current) {
+      return;
     }
-  }, [targetRef]);
+    const resizeObserver = new ResizeObserver(() => {
+      if(observedDiv.current.offsetWidth !== width) {
+        setWidth(observedDiv.current.offsetWidth);
+      }
+    });
+    resizeObserver.observe(observedDiv.current);
+    return function cleanup() {
+      resizeObserver.disconnect();
+    }
+  }, [observedDiv.current])
 
   console.log(width)
-  console.log(targetRef)
-  console.log(targetRef?.current)
-  console.log(targetRef?.current?.offsetWidth)
+  console.log(observedDiv)
+  console.log(observedDiv?.current)
+  console.log(observedDiv?.current?.offsetWidth)
 
   return (
     <>
       {stream &&
-      <div ref={targetRef} className="stream-wrapper">
+      <div ref={observedDiv} className="stream-wrapper">
 
         <Iframe url={`https://vk.com/video_ext.php?oid=${stream.url}`}
         width='100%'
