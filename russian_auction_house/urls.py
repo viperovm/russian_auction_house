@@ -4,16 +4,24 @@ from django.views.generic import TemplateView
 import debug_toolbar
 from django.conf import settings
 from django.conf.urls.static import static
+from sitemaps.sitemaps import StaticViewSitemap, DocViewSitemap, LotViewSitemap
+from django.contrib.sitemaps.views import sitemap
 
+sitemaps = {
+    'static': StaticViewSitemap,
+    'doc': DocViewSitemap,
+    'lot': LotViewSitemap
+}
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include("sitemaps.urls")),
-    path("api/", include("contacts.urls")),
-    path("api/", include("pages.urls")),
-    path("api/", include("gallery.urls")),
-    path("api/", include("appeals.urls")),
-    path("ckeditor5/", include('django_ckeditor_5.urls')),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}),
+    path('robots.txt', TemplateView.as_view(template_name='robots.txt', content_type='text/plain')),
+    path('api/', include('contacts.urls')),
+    path('api/', include('pages.urls')),
+    path('api/', include('gallery.urls')),
+    path('api/', include('appeals.urls')),
+    path('ckeditor5/', include('django_ckeditor_5.urls')),
 ]
 
 if settings.DEBUG:
