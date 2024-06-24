@@ -20,14 +20,7 @@ const StreamPage = () => {
 
   const submitHandler = (e) => {
     e.preventDefault()
-    useDispatch(login(data))
-      .then(result => {
-        if (result.status >= 200 && result.status < 300) {
-          setData(null)
-        } else {
-          console.error(result)
-        }
-      })
+    dispatch(login(data))
   }
 
   console.log(data)
@@ -40,7 +33,7 @@ const StreamPage = () => {
   }
 
   useEffect(() => {
-    useDispatch(checkAuthenticated())
+    dispatch(checkAuthenticated())
   }, [])
 
   useEffect(() => {
