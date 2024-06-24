@@ -60,10 +60,12 @@ const StreamPage = () => {
         {user
           ?
           <>
-            <h1>{stream?.name}</h1>
             {stream
               ?
-              <Stream/>
+              <>
+                <h1>{stream?.name}</h1>
+                <Stream/>
+              </>
               :
               <>
                 {page && <div
