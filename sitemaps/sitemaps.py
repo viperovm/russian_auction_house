@@ -12,7 +12,7 @@ class HomeViewSitemap(Sitemap):
         return Page.objects.filter(slug='/')
 
     def location(self, item):
-        return reverse(item)
+        return ''
 
 
 class StaticViewSitemap(Sitemap):
