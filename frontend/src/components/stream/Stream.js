@@ -1,6 +1,7 @@
 import React, {useRef, useLayoutEffect, useState, useEffect} from 'react'
 import {useDispatch, useSelector} from "react-redux";
 import {streamAction} from "../../store/actions/siteActions";
+import Iframe from 'react-iframe'
 
 const Stream = () => {
 
@@ -27,12 +28,21 @@ const Stream = () => {
     <>
       {stream &&
       <div ref={targetRef} className="stream-wrapper">
-        <iframe
-          src={`https://vk.com/video_ext.php?oid=${stream}`}
-          width="853"
-          height="480"
-          allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameBorder="0"
-          allowFullScreen/>
+
+        <Iframe url={`https://vk.com/video_ext.php?oid=${stream}`}
+        width={width ? width : '1190'}
+        height={width ? width/1.8 : '661'}
+        id=""
+        className=""
+        display="block"
+        position="relative"/>
+
+        {/*<iframe*/}
+        {/*  src={`https://vk.com/video_ext.php?oid=${stream}`}*/}
+        {/*  width="853"*/}
+        {/*  height="480"*/}
+        {/*  allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameBorder="0"*/}
+        {/*  allowFullScreen/>*/}
       {/*<iframe*/}
       {/*  width={width ? width : '1190'}*/}
       {/*  height={width ? width/1.8 : '661'}*/}
