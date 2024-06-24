@@ -30,7 +30,7 @@ const Input = ({type, name, required, placeholder, label, data, handler, rows='4
         {label}
         {required && <img src={required_img} className="input-required" alt="required"/>}
       </div>
-      {(type === 'text' || type === 'email') &&
+      {(type === 'text' || type === 'email' || type === 'password') &&
       <input name={name} type={type} placeholder={placeholder} value={data} onChange={e => handler(e)}/>}
       {/*{type === 'phone' && <div className="input-phone-wrapper">*/}
       {/*  /!*<div className="input-phone-placeholder">+7 (___) ___-__-__</div>*!/*/}
