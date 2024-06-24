@@ -1,4 +1,5 @@
 User-agent: *
+Disallow: /stream/
 Allow: /
 
 Sitemap: https://art-bid.ru/sitemap.xml
