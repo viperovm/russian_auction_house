@@ -30,7 +30,7 @@ const Stream = () => {
       <div ref={targetRef} className="stream-wrapper">
 
         <Iframe url={`https://vk.com/video_ext.php?oid=${stream.url}`}
-        width={width ? width : '1190'}
+        width='100%'
         height={width ? width/1.8 : '661'}
         id=""
         className=""
