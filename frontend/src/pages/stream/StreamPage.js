@@ -13,7 +13,7 @@ const StreamPage = () => {
 
   const {user} = useSelector(state => state.auth)
 
-  const {pages} = useSelector(state => state.site)
+  const {pages, stream} = useSelector(state => state.site)
 
   const [page, setPage] = useState(null)
   const [data, setData] = useState(null)
@@ -57,13 +57,21 @@ const StreamPage = () => {
   return (
     <MainLayout breadcrumbs={breadcrumbs} page={page}>
       <>
-        {user ?
+        {user
+          ?
           <>
-            <Stream/>
-            {page && <div
-              dangerouslySetInnerHTML={{__html: page?.description}}
-            />}
-          </> :
+            <h1>{stream?.name}</h1>
+            {stream
+              ?
+              <Stream/>
+              :
+              <>
+                {page && <div
+                  dangerouslySetInnerHTML={{__html: page?.description}}
+                />}
+              </>}
+          </>
+          :
           <div className='login-wrapper'>
             <div className="login-form-body">
               <h1>Вход</h1>
