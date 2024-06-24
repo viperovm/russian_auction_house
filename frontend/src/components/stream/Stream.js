@@ -24,6 +24,8 @@ const Stream = () => {
     }
   }, [targetRef]);
 
+  console.log(width)
+
   return (
     <>
       {stream &&
