@@ -3,6 +3,7 @@ import AboutPage from "../pages/about/AboutPage"
 import ShopPage from "../pages/shop/ShopPage"
 import HomePage from "../pages/home/HomePage";
 import React from "react";
+import StreamPage from "../pages/stream/StreamPage";
 
 const MasterRoute = () => {
 
@@ -20,6 +21,10 @@ const MasterRoute = () => {
         <Route
           path={`/shop/:lot?`}
           element={<ShopPage/>}
+        />
+        <Route
+          path={`/stream`}
+          element={<StreamPage/>}
         />
       </Routes>
     </BrowserRouter>

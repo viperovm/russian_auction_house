@@ -7,6 +7,7 @@ const initialState = {
   banner: null,
   paintings: [],
   painting: null,
+  stream: null,
 }
 
 const siteReducer = (state = initialState, action) => {
@@ -81,6 +82,20 @@ const siteReducer = (state = initialState, action) => {
       return {
         ...state,
         painting: null,
+      }
+
+    case t.GET_STREAM_SUCCESS:
+
+      return {
+        ...state,
+        stream: payload,
+      }
+
+    case t.GET_STREAM_FAIL:
+
+      return {
+        ...state,
+        stream: null,
       }
 
     default:

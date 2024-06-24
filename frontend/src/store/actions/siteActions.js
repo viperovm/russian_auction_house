@@ -65,6 +65,30 @@ export const bannerAction = () => async dispatch => {
   }
 }
 
+export const streamAction = () => async dispatch => {
+
+  const config = {
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+    }
+  };
+
+  try {
+    const res = await axios.get(`https://art-bid.ru/api/stream/`, config);
+
+    dispatch({
+      type: t.GET_STREAM_SUCCESS,
+      payload: res.data[0],
+    })
+  } catch (err) {
+
+    dispatch({
+      type: t.GET_STREAM_FAIL
+    })
+  }
+}
+
 export const paintingsAction = () => async dispatch => {
 
   const config = {
