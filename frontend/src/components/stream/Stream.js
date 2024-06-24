@@ -27,13 +27,19 @@ const Stream = () => {
     <>
       {stream &&
       <div ref={targetRef} className="stream-wrapper">
-      <iframe
-        width={width ? width : '1190'}
-        height={width ? width/1.8 : '661'}
-        src={`https://www.youtube.com/embed/${stream}`}
-        title="YouTube video player" frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerPolicy="strict-origin-when-cross-origin" allowFullScreen/>
+        <iframe
+          src={`https://vk.com/video_ext.php?oid=${stream}`}
+          width="853"
+          height="480"
+          allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameBorder="0"
+          allowFullScreen/>
+      {/*<iframe*/}
+      {/*  width={width ? width : '1190'}*/}
+      {/*  height={width ? width/1.8 : '661'}*/}
+      {/*  src={`https://www.youtube.com/embed/${stream}`}*/}
+      {/*  title="YouTube video player" frameBorder="0"*/}
+      {/*  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"*/}
+      {/*  referrerPolicy="strict-origin-when-cross-origin" allowFullScreen/>*/}
     </div>}
     </>
   )
