@@ -21,7 +21,7 @@ const Stream = () => {
     if (targetRef.current) {
       setWidth(targetRef.current.offsetWidth);
     }
-  }, []);
+  }, [targetRef]);
 
   return (
     <>
