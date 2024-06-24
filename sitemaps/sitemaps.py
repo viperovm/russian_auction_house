@@ -20,7 +20,7 @@ class StaticViewSitemap(Sitemap):
     priority = 0.9
 
     def items(self):
-        return Page.objects.filter(is_doc=False)
+        return Page.objects.filter(is_doc=False).exclude(slug='/')
 
     def location(self, item):
         return f'/{item.slug}/'

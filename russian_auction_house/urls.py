@@ -4,10 +4,11 @@ from django.views.generic import TemplateView
 import debug_toolbar
 from django.conf import settings
 from django.conf.urls.static import static
-from sitemaps.sitemaps import StaticViewSitemap, DocViewSitemap, LotViewSitemap
+from sitemaps.sitemaps import HomeViewSitemap, StaticViewSitemap, DocViewSitemap, LotViewSitemap
 from django.contrib.sitemaps.views import sitemap
 
 sitemaps = {
+    'home': HomeViewSitemap,
     'static': StaticViewSitemap,
     'doc': DocViewSitemap,
     'lot': LotViewSitemap
