@@ -26,8 +26,8 @@ const Stream = () => {
 
   console.log(width)
   console.log(targetRef)
-  console.log(targetRef.current)
-  console.log(targetRef.current.offsetWidth)
+  console.log(targetRef?.current)
+  console.log(targetRef?.current?.offsetWidth)
 
   return (
     <>
