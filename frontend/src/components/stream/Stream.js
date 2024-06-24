@@ -24,15 +24,18 @@ const Stream = () => {
   }, []);
 
   return (
-    <div ref={targetRef} className="stream-wrapper">
+    <>
+      {stream &&
+      <div ref={targetRef} className="stream-wrapper">
       <iframe
-        width="560"
-        height="315"
+        width={width ? width : '1190'}
+        height={width ? width/1.8 : '661'}
         src={`https://www.youtube.com/embed/${stream}`}
         title="YouTube video player" frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerPolicy="strict-origin-when-cross-origin" allowFullScreen/>
-    </div>
+    </div>}
+    </>
   )
 }
 
