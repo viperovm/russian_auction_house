@@ -77,14 +77,14 @@ const StreamPage = () => {
               </>
               :
               <>
-                {page && <div
+                {page && <div className='stream-page-text'
                   dangerouslySetInnerHTML={{__html: page?.description}}
                 />}
               </>}
           </>
           :
           <div className='login-wrapper'>
-            <div className="login-form-body">
+            <div className='login-form-body'>
               <h1>Вход</h1>
               <p>Авторизуйтесь для просмотра трансляци</p>
               <form onSubmit={submitHandler}>
