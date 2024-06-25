@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {modalAction, paintingRequestsAction, subscribeAction} from "../../store/actions/siteActions";
-import axios from "axios";
 import Modal from "../Modal";
 import Input from "../Inputs/Input";
 

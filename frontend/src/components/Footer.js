@@ -1,66 +1,16 @@
 import React from 'react';
 import Logo from "./Logo";
-import {Link} from "react-router-dom";
-import tg from "../assets/img/tg.svg"
-import whatsapp from "../assets/img/whatsapp.svg"
 import TextButton from "./Buttons/TextButton";
 import IconButton from "./Buttons/IconButton";
 import WhatsApp from "./icons/WhatsApp";
 import Tg from "./icons/Tg";
 import Menu from "./menu/Menu";
 import {modalAction} from "../store/actions/siteActions";
-import AppealModal from "./appeal/AppealModal";
 import {useDispatch} from "react-redux";
 
 const Footer = () => {
 
   const dispatch = useDispatch()
-
-  const menu_items = [
-    // {
-    //   id: 1,
-    //   name: 'Главная',
-    //   url: '/',
-    // },
-    // {
-    //   id: 2,
-    //   name: 'Покупка',
-    //   url: '/',
-    // },
-    // {
-    //   id: 3,
-    //   name: 'Продажа',
-    //   url: '/',
-    // },
-    // {
-    //   id: 4,
-    //   name: 'Разделы',
-    //   url: '/',
-    // },
-    // {
-    //   id: 5,
-    //   name: 'Услуги',
-    //   url: '/',
-    // },
-    {
-      id: 6,
-      name: 'О нас',
-      url: '/about',
-    },
-  ]
-
-  const doc_items = [
-    {
-      id: 1,
-      name: 'Правила аукционной торговли',
-      url: '/trading-rules',
-    },
-    {
-      id: 2,
-      name: 'Политика конфиденциальности',
-      url: '/personal-agreement',
-    },
-  ]
 
   const clickHandler = (type) => {
     if(type === 'appeal') {
@@ -86,13 +36,13 @@ const Footer = () => {
             <div className="navi_header">
               Навигация
             </div>
-            <Menu type="footer" items={menu_items}/>
+            <Menu type="footer"/>
           </div>
           <div className="docs">
             <div className="navi_header">
               Документы
             </div>
-            <Menu type="footer" items={doc_items} doc={true}/>
+            <Menu type="footer" doc={true}/>
           </div>
         </div>
         <div className="contact">

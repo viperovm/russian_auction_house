@@ -1,9 +1,8 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import Modal from "./Modal";
 import Input from "./Inputs/Input";
 import {useDispatch} from "react-redux";
 import {modalAction, subscribeAction} from "../store/actions/siteActions";
-import axios from "axios";
 
 const Subscription = () => {
 

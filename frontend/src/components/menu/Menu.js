@@ -3,7 +3,7 @@ import MenuItem from "./MenuItem";
 import {useSelector} from "react-redux";
 
 
-const Menu = ({type, doc=false, items}) => {
+const Menu = ({type, doc=false}) => {
 
   const { pages } = useSelector(state => state.site)
 
@@ -16,14 +16,6 @@ const Menu = ({type, doc=false, items}) => {
           :
           pages.filter(item => !item.is_doc).map((d, k) => <MenuItem key={k} data={d}/>)
       }
-
-      {/*{pages?.map((d, k) => {*/}
-      {/*  if(doc && d.doc) {*/}
-      {/*    return <MenuItem key={k} data={d}/>*/}
-      {/*  } else if(!doc && !d.doc) {*/}
-      {/*    return <MenuItem key={k} data={d}/>*/}
-      {/*  }*/}
-      {/*})}*/}
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import React, {useRef, useLayoutEffect, useState, useEffect} from 'react'
+import React, {useRef, useState, useEffect} from 'react'
 import {useSelector} from "react-redux";
 import Iframe from 'react-iframe'
 

@@ -1,5 +1,4 @@
-import React, {useEffect, useState} from 'react';
-import WhatsApp from "../icons/WhatsApp";
+import React from 'react';
 
 const IconButton = ({action, children}) => {
 

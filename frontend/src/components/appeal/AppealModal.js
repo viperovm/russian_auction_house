@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from 'react';
-import {useDispatch, useSelector} from "react-redux";
+import React, {useState} from 'react';
+import {useDispatch} from "react-redux";
 import {modalAction, appealAction, subscribeAction} from "../../store/actions/siteActions";
 import Modal from "../Modal";
 import Input from "../Inputs/Input";

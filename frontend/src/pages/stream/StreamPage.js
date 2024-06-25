@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from "react";
 import MainLayout from "../../layouts/MainLayout";
-import Gallery from "../../components/gallery/Gallery";
 import {useDispatch, useSelector} from "react-redux";
-import {useParams} from "react-router-dom";
 import Stream from "../../components/stream/Stream";
 import {login, checkAuthenticated} from "../../store/actions/authActions";
 import Input from "../../components/Inputs/Input";
