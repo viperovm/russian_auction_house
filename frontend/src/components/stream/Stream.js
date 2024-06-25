@@ -4,7 +4,7 @@ import Iframe from 'react-iframe'
 
 const Stream = () => {
 
-  const { stream } = useSelector(state => state.site)
+  const {stream} = useSelector(state => state.site)
 
   const observedDiv = useRef();
   const [width, setWidth] = useState(0);
@@ -14,7 +14,7 @@ const Stream = () => {
       return;
     }
     const resizeObserver = new ResizeObserver(() => {
-      if(observedDiv.current.offsetWidth !== width) {
+      if (observedDiv.current.offsetWidth !== width) {
         setWidth(observedDiv.current.offsetWidth);
       }
     });
@@ -29,28 +29,33 @@ const Stream = () => {
       {stream &&
       <div ref={observedDiv} className="stream-wrapper">
 
-        <Iframe url={`https://vk.com/video_ext.php?oid=${stream.url}`}
-        width='100%'
-        height={width ? width/1.8 : '661'}
-        id=""
-        className=""
-        display="block"
-        position="relative"/>
+        {stream?.source === 'vk' &&
 
-        {/*<iframe*/}
-        {/*  src={`https://vk.com/video_ext.php?oid=${stream}`}*/}
-        {/*  width="853"*/}
-        {/*  height="480"*/}
-        {/*  allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameBorder="0"*/}
-        {/*  allowFullScreen/>*/}
-      {/*<iframe*/}
-      {/*  width={width ? width : '1190'}*/}
-      {/*  height={width ? width/1.8 : '661'}*/}
-      {/*  src={`https://www.youtube.com/embed/${stream}`}*/}
-      {/*  title="YouTube video player" frameBorder="0"*/}
-      {/*  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"*/}
-      {/*  referrerPolicy="strict-origin-when-cross-origin" allowFullScreen/>*/}
-    </div>}
+        <Iframe url={`https://vk.com/video_ext.php?oid=${stream.url}`}
+                width='100%'
+                height={width ? width / 1.8 : '661'}
+                allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameBorder="0"
+                allowFullScreen
+                display="block"
+                position="relative"/>
+
+        }
+
+        {stream?.source === 'youtube' &&
+
+        <Iframe url={`https://www.youtube.com/embed/${stream.url}`}
+                width='100%'
+                height={width ? width / 1.8 : '661'}
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                referrerPolicy="strict-origin-when-cross-origin"
+                display="block"
+                position="relative"/>
+
+        }
+      </div>}
     </>
   )
 }
